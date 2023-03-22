@@ -19,11 +19,11 @@ export default function Navbar() {
       <div className="rect1">&nbsp;</div>
       <div className="rect2">&nbsp;</div>
       <div className="rect3">&nbsp;</div>
- 
+  
       <button className="nav-btn nav-bars" onClick={showNav}>
           <FaBars/>
       </button>
-
+      
       <nav className="links" ref={navRef}>  
         <a href="/#"> Home</a>
         <a href="/#"> Donate</a>
