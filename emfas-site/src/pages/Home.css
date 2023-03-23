@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Armata&display=swap");
+
+
+.block1{
+    
+    display: flex;
+    top: 25%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 20em;
+    position: relative;
+    line-height: 20em;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.title-stats{
+    display: inline-block;
+    width:40%;
+    margin: 0 auto;
+    top:50%;
+    vertical-align: middle;
+    line-height: normal;
+    text-align: center;
+    padding-left: 2em;
+}
+
+.title-stats h2{
+    font-size: 2em;
+    font-family: Armata;
+}
+
+
+.title-stats h1{
+    font-size: 3em;
+    font-family: Armata;
+    color: #1B1E62;
+    font-weight: bolder;
+}
+
+.stats-table{
+    margin: 0 auto;
+
+}
+
+.stats-table th, tr, td{
+    padding: 1em;
+    margin: auto 0;
+    
+}
+
+.stats-table th{
+    color: #1B1E62;
+    font-size: 1.5em;
+}
+
+.truck-img{
+    display: inline-block;
+    width:60%;
+    margin: 0 auto;
+    top:50%;
+    vertical-align: middle;
+    line-height: normal;
+    text-align: center;
+   
+    overflow: hidden;
+ 
+}
+
+.truck{
+    max-width: 75%;
+    max-height: 100%;
+    border-radius: 25px;
+    border: 2px solid #1B1E62;
+}
