@@ -8,15 +8,13 @@ function App() {
   return (
     <>
     
-      <Navbar/>
+      <Navbar className="nav"/>
+      <div className="container">
+        <Routes>
+          <Route exact path="/" element={ <Home/> } />
 
-      <Routes>
-       <Route exact path="/" element={ <Home/> } />
-
-      </Routes>
-    
-     
-      
+        </Routes>
+      </div>
     </>
     
 
