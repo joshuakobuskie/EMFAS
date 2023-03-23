@@ -3,8 +3,8 @@
 
 header{
     display: flex;
-    width:100%;
-    position:fixed;
+    max-width:100%;
+    position:absolute;
 }
 
 header .nav-btn{
@@ -16,7 +16,7 @@ header nav{
     font-family: 'Armata';
     position: absolute;
     top:50%;
-    height: 20%;
+    min-height: 20%;
     width: 100%;
     display: flex;
     float: center;
@@ -71,6 +71,7 @@ a:hover{
 		gap: 3%;
         background-color: #1B1E62;
         transition: all 0.3s ease-in;
+        z-index: 9;
      
     }
 
@@ -165,5 +166,3 @@ a:hover{
     left:15.75%;
     margin-top:0.5%;
 }
-
-
