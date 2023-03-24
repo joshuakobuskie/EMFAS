@@ -3,39 +3,46 @@
 
 
 .block1{
+
     display: flex;
     width: 100%;
+    min-height: 50%;
     max-width: 100%;
     position: relative;
     line-height: 20em;
     margin: 0 auto;
     align-items: center;
-    position: relative;
-    margin-top: 3vh;
-  
+    border-radius: 25px;
+    justify-content: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+   
+
+   
 }
 
 .title-stats{
     display: inline-block;
-    width:40%;
+   
     margin: 0 auto;
-    top:50%;
     vertical-align: middle;
     line-height: normal;
     text-align: center;
     padding-left: 2em;
-    max-height: 20em;
+    min-height: 20em;
     max-width: 100%;
+    overflow: hidden;
+
 }
 
 .title-stats h2{
-    font-size: 2vw;
+    font-size: 2em;
     font-family: Armata;
 }
 
 
 .title-stats h1{
-    font-size: 3vw;
+    font-size: 3em;
     font-family: Armata;
     color: #1B1E62;
     font-weight: bolder;
@@ -57,6 +64,8 @@
     font-size: 1.5em;
 }
 
+
+
 .truck-img{
     display: inline-block;
     width:60%;
@@ -65,8 +74,6 @@
     vertical-align: middle;
     line-height: normal;
     text-align: center;
-   
-    overflow: hidden;
  
 }
 
@@ -105,7 +112,6 @@
     padding-left: 2em;
     padding-right: 1em;
     max-height: 100%;
-    overflow: scroll;
     position: relative;
     
 }
@@ -113,6 +119,7 @@
 .our_story h1, p{
     max-height: 100%;
     max-width: 100%;
+    font-size: 1em;
 }
 
 .our-story h1{
@@ -137,10 +144,6 @@
     max-width: 100%;
     border-radius: 0px 25px 25px 0px;
 }
-
-
-
-
 
 
 .block3{
@@ -201,3 +204,10 @@
 
 
 
+@media only screen and (max-width: 1024px){
+
+.block1{
+    margin-top: 2em;
+}
+
+}
