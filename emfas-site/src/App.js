@@ -16,7 +16,7 @@ function App() {
     <div className='container'>
       
       <Routes>
-       <Route path="/" element={<Home />} />
+       <Route exact path="/njitdev" element={<Home />}/>
        <Route path="/Donate" element={<Donate />} />
        <Route path="/Join" element={<Join />} />
        <Route path="/Officers" element={<Officers />} />
