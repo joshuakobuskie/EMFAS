@@ -1,7 +1,7 @@
 import "./Home.css";
 //import truck from "../truck.png";
-import our_story from "../truck.png"
-import what_we_do from "../wwd.png";
+import our_story from "../images/truck.png"
+import what_we_do from "../images/wwd.png";
 
 
 export default function Home(){
