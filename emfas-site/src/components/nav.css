@@ -31,7 +31,7 @@ header nav{
 a{
     display: flex;
     margin-right: 2%;
-    font-size: 25px;
+    font-size: 1em;
 }
 
 a:link, a:visited{
@@ -40,7 +40,7 @@ a:link, a:visited{
     color: black;
 }
 
-a:hover{
+.links a:hover{
     background-color: #FF7A00;
     padding:5px;
 }
@@ -79,16 +79,16 @@ a:hover{
      
     }
 
-    a{
+    .links a{
         margin-left: 5%;
         width: 100%;
         justify-content: left;
        
     }
-    a:link, a:visited{
+    .links a:link, a:visited{
         color:#FF7A00;
     }
-    a:hover{
+    .links a:hover{
         color:white;
         background-color: #FF7A00;
     }

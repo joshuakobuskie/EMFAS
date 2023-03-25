@@ -1,0 +1,52 @@
+.footer{
+    margin: auto 0;
+    text-align: center;
+    min-height: 10em;
+    min-width: 100%;
+    position: relative;
+    background-color:#E8E8EF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+.foot-links{
+    display: flex;
+    padding: 1em;
+    min-height: 10em;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    padding:0
+}
+
+.foot-links a:hover{
+    color:#FF7A00;
+}
+
+.contact{
+  display: flex;
+  margin: 0;
+  text-align: center;
+  min-height: 10em; 
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+
+}
+.contact h4{
+   display: flex;  
+   color: #1B1E62;
+   margin:0;
+   justify-content: center;
+  
+}
+
+.contact p{
+    margin:0;
+  
+}
