@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+    color: #1B1E62;
+    font-family: Armata;
+}
+
+.Donate{
+    background-color: #E8E8EF;
+    height: 20em;
+    margin-bottom:3em;
+    display: flex;
+    align-items: center;
+
+}
+
+
+.contact-info{
+
+    width: 50%;
+    padding: 2em;
+    margin:3em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.Address{
+    margin: auto 0;
+   
+}
+
+.paypal{
+
+    width: 50%;
+    padding: 2em;
+    margin:3em;
+ 
+}
+
