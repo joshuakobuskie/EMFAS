@@ -9,7 +9,7 @@ import JoinCSS from "./Join.css"
 
 export default function Join(){
     return(
-     <div className="join-container">  
+     <div className={JoinCSS.join_container}>  
         <div className={JoinCSS.join_title}>
             <h1>Join Us!</h1>
         </div>

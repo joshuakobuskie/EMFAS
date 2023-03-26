@@ -8,18 +8,21 @@ export default function Join_form(){
                     <label>Name</label>
                     <input type="text" name="name" ></input>
                 </div>
-                <div className="field">
-                    <label>Age</label>
-                    <input type="text" name="age" ></input>
-                </div>
-                <div className="field">
-                    <label>Phone Number</label>
-                    <input type="text" name="phone" ></input>
-                </div>
+                
+                    <div className="field">
+                        <label>Age</label>
+                        <input type="text" name="age" ></input>
+                    </div>
+                    <div className="field">
+                        <label>Phone Number</label>
+                        <input type="phone" name="phone" ></input>
+                    </div>
+               
                 <div className="field">
                     <label>Email</label>
-                    <input type="text" name="email" ></input>
+                    <input type="email" name="email" ></input>
                 </div>
+                
                 <button className='button'>Submit</button>
                
             </form>

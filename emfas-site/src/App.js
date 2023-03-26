@@ -1,6 +1,5 @@
 import './App.css';
 import Navbar from './components/nav';
-import Footer from './components/footer';
 import Home from './pages/Home';
 import Donate from './pages/Donate';
 import Join from './pages/Join';
@@ -11,18 +10,17 @@ import {Route, Routes} from "react-router-dom"
 function App() {
   return (
    <>
-   
-    
-    <div className='container'>
-      <Navbar />
+    <div>
+    <Navbar className="nav"/>
+    </div>
+    <div className="container">
+      
       <Routes>
        <Route path="/Home" element={<Home />} />
        <Route path="/Donate" element={<Donate />} />
        <Route path="/Join" element={<Join /> } />
        <Route path="/Officers" element={<Officers />} />
       </Routes>
-      <Footer className="footer"/>
-      
     </div>
   </>
   );
