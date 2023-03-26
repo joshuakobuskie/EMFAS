@@ -1,0 +1,33 @@
+
+
+.join-container{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.join_title{
+    display: inline-block;
+    height: 15%;
+    width: auto;
+    
+  
+}
+h1{
+    text-align: center;
+    color:#1B1E62;
+
+}
+
+.join_info{
+    display: flex;
+    float: left;
+    
+}
+
+.join_form{
+    display: flex;
+    float: right;
+}
+
