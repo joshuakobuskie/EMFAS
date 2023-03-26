@@ -1,13 +1,12 @@
 
 
 .wrapper{
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
     height: 100vh;
     width: 100 vw;
-    justify-content: start;
-    align-items: end;
-    margin-top: 200px;
     padding-left: 60px;
+    float: left;
 }
 
 .accordion {
