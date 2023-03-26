@@ -1,19 +1,18 @@
-
-.nav{
-  position: relative;
-}
-
 .container{
 
   position: absolute;
   margin: 0;
- 
-
-}
   
-
-
-
-
-
-
+  height: 100%;
+  width: 100%;
+  
+  min-height: 100%;
+  max-width: 100%;
+  
+  }
+  
+  .nav{
+  
+    position: relative;
+  
+  }
