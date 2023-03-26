@@ -8,13 +8,13 @@ import {Link} from "react-router-dom"
 
 export default function Navbar() {
   const navRef = useRef();
-
+  
   const showNav = () => {
     navRef.current.classList.toggle("responsive_nav");
   }
   return (
     
-    <header className="nav">
+    <header className="nav" id="nav">
      
       <img src={logo} className="nav-logo"/> 
 
@@ -28,16 +28,16 @@ export default function Navbar() {
       </button>
 
       <nav className="links" ref={navRef}>  
-        <Link to="/Home"> Home</Link>
-        <Link to="/Donate"> Donate</Link>
-        <Link to="/Join">Join the Squad</Link>
-        <Link to="/Officers"> Officers</Link>
+        <Link to="/" onClick={showNav}> Home</Link>
+        <Link to="/Donate" onClick={showNav}> Donate</Link>
+        <Link to="/Join" onClick={showNav}>Join the Squad</Link>
+        <Link to="/Officers" onClick={showNav}> Officers</Link>
 
 
-        <button className="nav-btn nav-close-btn" onClick={showNav}>
-          <FaTimes/>
-        </button>
-       
+      <button className="nav-btn nav-close-btn" onClick={showNav}>
+        <FaTimes/>
+      </button>
+      
       </nav>
      
         

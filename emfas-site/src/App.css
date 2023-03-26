@@ -1,3 +1,9 @@
+
+.nav{
+  position: relative;
+  min-width: 100%;
+}
+
 .container{
 
   position: absolute;
