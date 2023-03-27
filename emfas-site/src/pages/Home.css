@@ -8,7 +8,7 @@
     width: 100%;
     min-height: 50%;
     max-width: 100%;
-    position: relative;
+   
     line-height: 20em;
     margin: 0 auto;
     align-items: center;
@@ -92,7 +92,6 @@
     display: flex;
     width: 65%;
     max-width: 65%;
-    position: relative;
     line-height: 20em;
     margin: 0 auto;
     align-items: center;
@@ -153,7 +152,6 @@
     width: 65%;
     max-width: 65%;
     min-height: 30vh;
-    position: relative;
     line-height: 20em;
     margin: 0 auto;
     align-items: center;
@@ -211,3 +209,4 @@
 }
 
 }
+

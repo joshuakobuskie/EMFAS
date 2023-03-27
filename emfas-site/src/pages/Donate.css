@@ -4,12 +4,16 @@ h1{
     font-family: Armata;
 }
 
+
+
 .Donate{
     background-color: #E8E8EF;
-    height: 20em;
+    height: 25em;
     margin-bottom:3em;
     display: flex;
     align-items: center;
+    border-radius: 45px;
+    
 
 }
 
@@ -22,14 +26,27 @@ h1{
     height: 100%;
     display: flex;
     justify-content: center;
-
+  
+  
     
 }
 
-.Address{
+.contact-info .Address{
     margin: auto 0;
-   
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  
 }
+
+.contact-info .Address h3{
+    text-align: center;
+}
+
+
+
 
 .paypal{
 
@@ -37,16 +54,43 @@ h1{
     padding: 2em;
     margin:3em;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+
     
 }
 
 .img{
-    max-height: 80%;
+    
+    min-height: 100%;
+    width:100%;
+   
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img h3{
+
+    text-align: center;
 }
 
 .img img{
     position: relative;
     max-width: 50%;
     max-height:50%;
-   
+}
+
+.img a{
+    display: flex;
+    justify-content: center;
+}
+
+
+.donate-pg{
+    width: 100%;
+    position: relative;
 }

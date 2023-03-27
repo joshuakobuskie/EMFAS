@@ -1,18 +1,22 @@
+
 .container{
 
-  position: absolute;
   margin: 0;
-  min-height: fit-content;
-  min-width: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
+  min-width:100%;
   
 }
   
-  .nav{
-  
-    position: relative;
-  
-  }
+.nav{
+  position: relative;
+  width:100%;
+}
 
 
+.foot{
+  width:100%;
+  position: absolute;
+
+}

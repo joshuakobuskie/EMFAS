@@ -12,27 +12,24 @@ function App() {
   return (
    <>
     <div>
-    <Navbar className="nav"/>
+      <Navbar className="nav"/>
     </div>
 
     <div className="container">
       
       <div className="body">
+    
         <Routes>
-       <Route path="/" element={<Home />} />
-       <Route path="/Donate" element={<Donate />} />
-       <Route path="/Join" element={<Join /> } />
-       <Route path="/Officers" element={<Officers />} />
-      </Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Donate" element={<Donate />} />
+          <Route path="/Join" element={<Join /> } />
+          <Route path="/Officers" element={<Officers />} />
+        </Routes>
         
-        <div className="footer">
-          <Footer/>
-        </div>
-      </div>
-
-
-   
-
+        <Footer className="foot"/>
+        
+      </div>  
+    
     </div>
     
   
