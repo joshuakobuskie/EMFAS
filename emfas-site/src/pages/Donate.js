@@ -1,4 +1,5 @@
-import "./Donate.css"
+import "./Donate.css";
+import paypal_img from "../paypal_code.png";
 
 
 export default function Donate(){
@@ -8,7 +9,6 @@ export default function Donate(){
         <h1>Donate</h1>
         <div className="Donate">
             <div className="contact-info">
-                
                 <div className="Address">
                     <h3>Send Your Donations to:</h3>
                     <p>
@@ -23,9 +23,23 @@ export default function Donate(){
                 </div>
             </div>
 
+            <div className="or">
+                <h3>or</h3>
+            </div>
+
             <div className="paypal">
+               
+                
+                <div className="donate">
+                    <h3>Donate Here</h3>
+                </div>
+                
+               
 
-
+                <div className="img">
+                    <img src={paypal_img}></img>
+                </div>
+                    
             </div>
 
         </div>

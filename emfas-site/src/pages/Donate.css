@@ -16,7 +16,7 @@ h1{
 
 .contact-info{
 
-    width: 50%;
+    width: 40%;
     padding: 2em;
     margin:3em;
     height: 100%;
@@ -33,9 +33,20 @@ h1{
 
 .paypal{
 
-    width: 50%;
+    width: 40%;
     padding: 2em;
     margin:3em;
- 
+    height: 100%;
+    
 }
 
+.img{
+    max-height: 80%;
+}
+
+.img img{
+    position: relative;
+    max-width: 50%;
+    max-height:50%;
+   
+}

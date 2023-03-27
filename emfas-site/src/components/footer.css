@@ -4,11 +4,10 @@
     min-height: 10em;
     min-width: 100%;
     position: relative;
-    background-color:#E8E8EF;
     display: flex;
     justify-content: center;
     align-items: center;
- 
+   
 }
 
 
