@@ -9,11 +9,10 @@ export default function Join_form(){
                     <input type="text" name="name" ></input>
                 </div>
                 
-                    <div className="field">
-                        <label>Age</label>
+                    <div className="sameline">
+                        <label >Age</label>
                         <input type="text" name="age" ></input>
-                    </div>
-                    <div className="field">
+                   
                         <label>Phone Number</label>
                         <input type="phone" name="phone" ></input>
                     </div>

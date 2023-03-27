@@ -1,23 +1,22 @@
 .container{
     display: flex;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
 
 }
 
 
 .container form{
     padding-left: 700px;
+    max-width: 100%;
 }
 
 
 .container label{
-    display:block;
+    display:flex;
     font-size: large;
-    color:#1B1E62
-    
-    
-    
+    color:#1B1E62;
+    justify-content: space-between;
 }
 
 
@@ -34,7 +33,7 @@
 
 
 .container button{
-    
+    display: flex;
     border-radius: 25px;
     background-color: #FF7A00;
     font-size: large;
@@ -43,7 +42,9 @@
     min-height: 30px;
     min-width: 100px;
     cursor: pointer;
-    
+    margin:20px auto;
+    justify-content: center;
+    align-items: center;
     
 }
 
