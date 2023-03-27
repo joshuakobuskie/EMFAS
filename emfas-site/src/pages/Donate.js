@@ -1,7 +1,6 @@
 import "./Donate.css";
 import paypal_img from "../paypal_code.png";
-import {Link} from "react-router-dom"
-
+import paypal_btn from "../paypal_btn.png";
 
 export default function Donate(){
     return(
@@ -33,8 +32,9 @@ export default function Donate(){
 
             <div className="paypal">
                 <div className="img">
-                    <h3>Donate Here</h3>
+                    <a href="https://www.paypal.com/us/home"><img src={paypal_btn}></img></a>
                     <a href="https://www.paypal.com/us/home"><img src={paypal_img}></img></a>
+                    
                 </div>
                     
             </div>

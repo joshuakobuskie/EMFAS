@@ -1,0 +1,33 @@
+
+.officers-pg{
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+}
+
+
+
+
+.officer-table th{
+    text-align: left;
+    padding:1em;
+
+}
+
+.officer-table td{
+    text-align: center;
+    padding:1em;
+
+}
+
+
+.officer-table a{
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+
+}
+
+.officer-table{
+    background-color: #E8E8EF;
+}
