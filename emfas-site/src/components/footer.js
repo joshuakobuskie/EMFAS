@@ -17,10 +17,10 @@ export default function  Footer(){
 
                 <div className="contact">
                     <ul>
-                        <h4>Contact Us</h4>
-                        <p>11 Street, Manalapan</p>
+                        <p>7 Sanford St</p>
+                        <p>Manalapan Township, NJ 07726</p>
                         <p>email@email.com</p>
-                        <p>20177711111</p>
+                        <p>(732) 850-6488</p>
                     </ul>
                    
                 </div>

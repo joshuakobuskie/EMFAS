@@ -21,7 +21,7 @@ export default function Home(){
                             <td>Miles Driven</td>
                         </tr>
                         <tr>
-                            <th>-- min</th>
+                            <th>-- mins</th>
                             <th>-- calls</th>
                             <th>-- miles</th>
                         </tr>
@@ -59,10 +59,10 @@ export default function Home(){
                 </div>
                 <div className="what-we-do">
                     <h1>What We Do</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p>The Englishtown - Manalapan Volunteer First Aid Squad serves the towns of Englishtown and Manalapan, Monmouth county New Jersey, 
+                        with prompt emergency medical services 24 hours a day, seven days a week, 365 days a year.  Most of the men and woman that staff our 
+                        ambulances are volunteers who give up their free time to save the lives of their neighbors. 
+                         We have provided our services for the last 75 years and we look forward to another 75 years of serving our community.
                     </p>
                 </div>
                 
