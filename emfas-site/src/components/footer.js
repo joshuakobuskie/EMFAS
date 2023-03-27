@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 export default function  Footer(){
     return (
         <div className="footer">
-           
                 <div className="foot-links">
                     <ul>
                         <Link to="/"> Home</Link>

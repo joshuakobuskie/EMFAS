@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    
 }
 
 
@@ -17,6 +17,7 @@
     min-height: 10em;
     justify-content: center;
     align-items: center;
+  
 }
 
 ul{
@@ -49,3 +50,4 @@ ul{
     margin:0;
   
 }
+

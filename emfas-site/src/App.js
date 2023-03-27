@@ -5,6 +5,7 @@ import Donate from './pages/Donate';
 import Join from './pages/Join';
 import Officers from './pages/Officers';
 import {Route, Routes} from "react-router-dom"
+import Footer from './components/footer';
 
 
 function App() {
@@ -13,15 +14,28 @@ function App() {
     <div>
     <Navbar className="nav"/>
     </div>
+
     <div className="container">
       
-      <Routes>
-       <Route path="/Home" element={<Home />} />
+      <div className="body">
+        <Routes>
+       <Route path="/" element={<Home />} />
        <Route path="/Donate" element={<Donate />} />
        <Route path="/Join" element={<Join /> } />
        <Route path="/Officers" element={<Officers />} />
       </Routes>
+        
+        <div className="footer">
+          <Footer/>
+        </div>
+      </div>
+
+
+   
+
     </div>
+    
+  
   </>
   );
 
