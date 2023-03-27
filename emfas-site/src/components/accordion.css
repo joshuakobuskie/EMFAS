@@ -5,19 +5,22 @@
     flex-direction: column;
     height: 100vh;
     width: 100 vw;
-    padding-left: 60px;
     float: left;
+
+
 }
 
 .accordion {
-    width: 500px;
+    width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+
 }
 
 
 .item{
-    
-    background:#bec0d8;
-    margin-bottom: 5px;
+
+    background:#E8E8EF;
     padding: 10px 20px;
     cursor: pointer;
     

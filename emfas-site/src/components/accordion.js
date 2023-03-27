@@ -17,6 +17,7 @@ export default function  Accordion(){
         <div className='wrapper'>
             <div className='accordion'>
                 {data.map((item,i)=>(
+                
                     <div className='item'>
                         <div className='title' onClick={()=>toggle(i)}>
                             <h2>{item.question}</h2>
@@ -24,6 +25,7 @@ export default function  Accordion(){
                         </div>
                         <div className={selected == i ? 'content show': 'content'}>{item.answer}</div>
                     </div>
+                  
                 ))}
             </div>
          </div>
@@ -47,29 +49,24 @@ const data=[{
     question:'What types of memberships are there?',
     answer:
         'Senior Members are at least 18 years of age, are licensed EMT\'s and have been probationary members for varying periods of time,\
-         depending upon experience.\
+         depending upon experience.\n\
         Probationary Members are at least 18 years of age. They are the most recent additions to the squad and respond to first aid calls\
-         together with at least two senior members.\
+         together with at least two senior members.\n\
         Cadet Members are 16 & 17 years of age. They ride fewer hours per week and act as supplemental members to a crew.\
          Interested in becoming a cadet? E-mail cadets@emfas.org',
 },
 {
 
-    question:'How much time do I need to commit?', 
-    answer:
-        'Members receive convenient CPR training and Emergency Medical Technician (EMT) classes, as well as continuing education courses.',
-        
-},
-{
-
     question:'What kind of training is provided?',
     answer:
         'Members receive convenient CPR training and Emergency Medical Technician (EMT) classes, as well as continuing education courses.',
         
 },
+
+
 {
 
-    question:'What kind of training is provided?',
+    question:'How much time do I need to commit?',
     answer:
         'Members volunteer once a week, either during the day (our strongest need) the evening or at night. Day crews are on call from 8am to 5pm,\
          evening crews are on call from 5p - 11p and night crews from 11pm to 5am(8am on Friday and Saturday). While on call, members usually relax\
@@ -92,7 +89,7 @@ const data=[{
     question:'How do I join? ',
     answer:
         'If you are 18 years of age or older, call (732) 850-6488 or e-mail membership@emfas.org for a time/date to come in learn more about \
-        the squad! \
+        the squad! \n\
         Interested in the cadet program? Are you between the ages of 16 & 18? If so please contact the cadets at cadets@emfas.org ',
         
 },
