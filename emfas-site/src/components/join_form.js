@@ -5,20 +5,20 @@ export default function Join_form(){
         <div className={Join_formCSS.container}>
             <form>
                 <div className="field">
-                    <label>Name</label>
+                  <h2><label>Name</label></h2>  
                     <input type="text" name="name" ></input>
                 </div>
                 
                     <div className="sameline">
-                        <label >Age</label>
+                      <h2><label >Age</label></h2>
                         <input type="text" name="age" ></input>
                    
-                        <label>Phone Number</label>
+                       <h2><label>Phone Number</label></h2>
                         <input type="phone" name="phone" ></input>
                     </div>
                
                 <div className="field">
-                    <label>Email</label>
+                 <h2><label>Email</label></h2>
                     <input type="email" name="email" ></input>
                 </div>
                 

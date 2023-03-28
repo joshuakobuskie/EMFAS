@@ -11,12 +11,17 @@
     max-width: 100%;
 }
 
-
+.field h2{
+    margin: auto;
+}
+.sameline h2{
+    margin: auto;
+}
 .container label{
     display:flex;
     font-size: large;
     color:#1B1E62;
-    justify-content: space-between;
+    
 }
 
 
