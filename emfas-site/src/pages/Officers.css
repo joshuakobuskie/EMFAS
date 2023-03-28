@@ -30,4 +30,9 @@
 
 .officer-table{
     background-color: #E8E8EF;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.flag-truck{
+    border-radius: 0px 0px 25px 25px;
 }

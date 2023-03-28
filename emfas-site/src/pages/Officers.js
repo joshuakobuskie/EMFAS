@@ -6,7 +6,6 @@ export default function Officers(){
     return(
         <div className="officers-pg">
             <h1>Officers</h1>
-            <img src={flag_truck}></img>
          <table className="officer-table">
                         <tr>
                             <th>Chief</th>
@@ -87,8 +86,9 @@ export default function Officers(){
                         </tr>
                        
                         
-                        
                     </table>
+
+                    <img src={flag_truck} className="flag-truck"></img>
 
                     
                

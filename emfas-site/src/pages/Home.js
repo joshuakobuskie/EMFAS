@@ -1,7 +1,8 @@
 import "./Home.css";
 //import truck from "../truck.png";
-import our_story from "../images/truck.png"
+import our_story from "../images/truck.png";
 import what_we_do from "../images/wwd.png";
+import truck_line from "../truck_lineup.png";
 
 
 export default function Home(){
@@ -38,11 +39,15 @@ export default function Home(){
             <div className="block2">
 
                 <div className="our-story">
-                    <h1>Our Story</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <h1>About EMFAS</h1>
+                    <p>The Englishtown Manalapan First Aid Squad is a volunteer organization that serves the towns of Englishtown and Manalapan, NJ. 
+                        The EMFAS has provided prompt emergency medical services 24/7/365 for the last 75 years. Most of our staff are volunteers who 
+                        dedicate their time to save lives and make a difference in our community. Our ambulances carry pulse oximetry units, aspirin for 
+                        cardiac emergencies, epinephrine for severe allergic reactions, C-PAP oxygen delivery for acute respiratory emergencies, Narcan for 
+                        opioid overdoses, and other lifesaving tools. We continue to recruit new volunteers, and provide lifesaving training free of charge to 
+                        all applicants. If you would like to learn more about volunteering with the squad, we provide a “ride-along” program where you can join 
+                        us on a shift with no strings attached. More details about getting involved can be found on our “Join the Team” page.
+
                     </p>
 
                 </div>
@@ -58,14 +63,36 @@ export default function Home(){
                     <img src={what_we_do} className="wwd-img"></img>
                 </div>
                 <div className="what-we-do">
-                    <h1>What We Do</h1>
-                    <p>The Englishtown - Manalapan Volunteer First Aid Squad serves the towns of Englishtown and Manalapan, Monmouth county New Jersey, 
-                        with prompt emergency medical services 24 hours a day, seven days a week, 365 days a year.  Most of the men and woman that staff our 
-                        ambulances are volunteers who give up their free time to save the lives of their neighbors. 
-                         We have provided our services for the last 75 years and we look forward to another 75 years of serving our community.
+                    <h1>What is WMEMS?</h1>
+                    <p>The Western Monmouth Emergency Medical Services is a licensed Basic Life Support agency that supports our volunteers with the New Jersey Department 
+                        of Health and Senior Services. WMEMS bills patients’ insurance carriers to redeem the BLS Ambulance transportation fee reimbursement, as provided by 
+                        law. WMEMS has provided the squad with an exceptional group of per-diem Emergency Medical Technicians to assist staffing our ambulances while relieving 
+                        our governing bodies from an estimated cost of $250,000.00 per year. Thanks to the WMEMS, we are able to maintain our services while providing enhanced 
+                        training, reduced response times, and high quality emergency medical services to our community. The WMEMS has made new ambulances, vehicle insurance, and 
+                        the annual donation and funding of the volunteer squad’s LOSAP program affordable.
                     </p>
                 </div>
                 
+            </div>
+
+            <div className="block4">
+
+                <div className="billing">
+                    <h1>Billing</h1>
+                    <p>All information provided to the EMFAS crew and the WMEMS is protected under HIPAA regulations and collected through secure electronic systems. If insurance information is unavailable, our billing provider will contact you. WMEMS will accept assignments from the insurance company and does 
+                        not seek to impose any financial hardship among our community members. If you have any concerns about WMEMS or our policies, please contact our president 
+                        via email at president@emfas.org. Questions for our management team can be emailed to management@wmems.com.
+                    </p>
+
+                </div>
+                <div className="our-story-img">
+                    <img src={truck_line} className="wwd-img"></img>
+                   
+                </div>
+
+
+
+
             </div>
 
 
