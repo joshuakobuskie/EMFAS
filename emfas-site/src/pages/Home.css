@@ -100,27 +100,27 @@
     margin-top: 5em;
     margin-bottom: 5em;
     overflow:hidden;
-    height:18em;
+    min-height:25em;
 
    
 }
 
 
-.our-story{
+.our-story, .billing{
     display: inline-block;
     max-width:50%;
     line-height: normal;
     padding-left: 2em;
-    padding-right: 1em;
     max-height: 100%;
     position: relative;
     
 }
 
-.our_story h1, p{
+.our_story h1, p, .billing p{
     max-height: 100%;
     max-width: 100%;
     font-size: 1em;
+   
 }
 
 .our-story h1{
@@ -129,6 +129,7 @@
 
 
 .our-story-img{
+    padding:1em;
     position: relative;
     display: inline-block;
     min-height: 100%;
@@ -143,6 +144,8 @@
 
 .story-img{
     max-width: 100%;
+    min-height: 100%;
+    border-radius: 25px;
 }
 
 
@@ -161,7 +164,7 @@
     margin-top: 5em;
     margin-bottom: 5em;
     overflow: hidden;
-    height:18em;
+    min-height:25em;
    
 }
 
@@ -193,6 +196,7 @@
     max-width:50%;
     max-height: 100%;
     line-height: normal;
+    padding:1em;
 
 }
 
@@ -200,7 +204,43 @@
 .wwd-img{
     max-width: 100%;
     max-height: 100%;
+    border-radius: 25px;
+    padding: 1em;
 }
+
+
+
+.block4{
+
+    background-color: #E8E8EF;
+    display: flex;
+    width: 65%;
+    max-width: 65%;
+    line-height: 20em;
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 25px;
+    justify-content: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    overflow:hidden;
+    min-height:25em;
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

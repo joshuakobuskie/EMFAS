@@ -1,8 +1,3 @@
-h1{
-    text-align: center;
-    color: #1B1E62;
-    font-family: Armata;
-}
 
 
 
@@ -12,9 +7,13 @@ h1{
     margin-bottom:3em;
     display: flex;
     align-items: center;
-    border-radius: 45px;
-    
 
+}
+
+h1{
+    text-align: center;
+    color: #1B1E62;
+    font-family: Armata;
 }
 
 
@@ -26,9 +25,12 @@ h1{
     height: 100%;
     display: flex;
     justify-content: center;
-  
-  
-    
+   
+}
+
+.or{
+    width:20%;
+    text-align: center;
 }
 
 .contact-info .Address{
@@ -46,10 +48,7 @@ h1{
 }
 
 
-
-
 .paypal{
-
     width: 40%;
     padding: 2em;
     margin:3em;
@@ -91,6 +90,38 @@ h1{
 
 
 .donate-pg{
-    width: 100%;
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
     position: relative;
+    
 }
+
+
+.donate-pg a{
+  
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    width: 100%;
+
+}
+
+.donate-pg a:hover{
+    color: #FF7A00;
+}
+
+.donate-pg h3{
+    text-align: center;
+}
+
+.contact-vp{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+
+
+
+
