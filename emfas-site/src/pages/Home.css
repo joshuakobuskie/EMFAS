@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Armata&display=swap");
 
-
-
 .block1{
 
     display: flex;
     width: 100%;
     min-height: 50%;
     max-width: 100%;
-   
     line-height: 20em;
     margin: 0 auto;
     align-items: center;
@@ -28,7 +25,6 @@
     vertical-align: middle;
     line-height: normal;
     text-align: center;
-    padding-left: 2em;
     min-height: 20em;
     max-width: 100%;
     overflow: hidden;
@@ -50,6 +46,11 @@
 
 .stats-table{
     margin: 0 auto;
+
+}
+
+.stats-table caption{
+    font-family: Armata;
 
 }
 
@@ -230,25 +231,178 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 1024px){
 
-.block1{
-    margin-top: 2em;
-}
+    .block1{
+        margin-top: 2em;
+        min-height:10em;
+        max-height:50em;
+        max-width: 90%;
+        display: flex;
+        flex-flow: column;
+        line-height: 20em;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5em;
+        overflow:scroll;
+
+    }
+
+
+    .block1 h1{
+        font-size: 2.5em;
+    }
+
+    .block1 th, td{
+        font-size: 1em;
+        width:33%
+        
+    }
+
+
+    .block2{
+
+        min-height:10em;
+        max-height:50em;
+        min-width: 90%;
+        background-color: #E8E8EF;
+        display: flex;
+        flex-flow: column;
+        line-height: 20em;
+        align-items: center;
+        border-radius: 25px;
+        justify-content: center;
+        margin-bottom: 5em;
+        overflow:scroll;
+
+    }
+
+    .our-story, .billing{
+        display: inline-block;
+        max-width: 100%;
+        line-height: normal;
+        padding-left: 2em;
+        padding-right: 2em;
+        max-height: 50%;
+        position: relative;
+        
+    }
+
+    .our-story p, .billing p{
+        max-height: 100%;
+        max-width: 100%;
+        font-size: .75em;
+    
+    }
+
+    .our-story h1{
+        color: #1B1E62;
+    }
+
+
+    .our-story-img{
+        padding:1em;
+        position: relative;
+        display: inline-block;
+        min-height: 100%;
+        max-width:90%;
+        margin: 0 auto;
+        line-height: normal;
+        overflow: hidden;
+        
+    }
+
+
+
+    .story-img{
+        max-width: 100%;
+        min-height: 100%;
+        border-radius: 10px;
+    }
+
+
+    .block3{
+
+        min-height:10em;
+        max-height:50em;
+        min-width: 90%;
+        background-color: #E8E8EF;
+        display: flex;
+        flex-flow: column;
+        line-height: 20em;
+        align-items: center;
+        border-radius: 25px;
+        justify-content: center;
+        margin-bottom: 5em;
+        overflow:scroll;
+    
+    }
+
+
+    .what-we-do{
+        display: inline-block;
+        max-width: 100%;
+        line-height: normal;
+        padding-left: 2em;
+        padding-right: 2em;
+        max-height: 50%;
+        position: relative;
+        order:1;
+        
+    }
+
+    .what-we-do p{
+        max-height: 100%;
+        max-width: 100%;
+        font-size: .75em;
+    }
+
+    .what-we-do h1{
+        color: #1B1E62;
+    }
+
+
+    .what-we-do-img{
+        order:2;
+        padding:1em;
+        position: relative;
+        display: inline-block;
+        min-height: 100%;
+        max-width:100%;
+        margin: 0 auto;
+        line-height: normal;
+        overflow: hidden;
+
+    }
+
+
+    .wwd-img{
+        max-width: 100%;
+        min-height: 100%;
+        border-radius: 25px;
+    }
+
+    .block4{
+
+        min-height:10em;
+        max-height:50em;
+        min-width: 90%;
+        background-color: #E8E8EF;
+        display: flex;
+        flex-flow: column;
+        line-height: 20em;
+        align-items: center;
+        border-radius: 25px;
+        justify-content: center;
+        margin-bottom: 5em;
+        overflow:scroll;
+
+    
+    }
+
+
+
+
 
 }
 
