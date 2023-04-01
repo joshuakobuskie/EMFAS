@@ -1,7 +1,7 @@
 import "./Home.css";
 //import truck from "../truck.png";
-import our_story from "../images/truck.png";
-import what_we_do from "../images/wwd.png";
+import truck_img from "../images/truck.png";
+import truck_event from "../images/wwd.png";
 import truck_line from "../truck_lineup.png";
 
 
@@ -39,7 +39,7 @@ export default function Home(){
             </div>
             <div className="block2">
 
-                <div className="our-story">
+                <div className="about-ems">
                     <h1>About EMFAS</h1>
                     <p>The Englishtown Manalapan First Aid Squad is a volunteer organization that serves the towns of Englishtown and Manalapan, NJ. 
                         The EMFAS has provided prompt emergency medical services 24/7/365 for the last 75 years. Most of our staff are volunteers who 
@@ -52,18 +52,18 @@ export default function Home(){
                     </p>
 
                 </div>
-                <div className="our-story-img">
-                    <img src={our_story} className="story-img"></img>
+                <div className="about-ems-img">
+                    <img src={truck_img} className="about-img"></img>
                 </div>
             </div>
 
             <div className="block3">
                 
 
-                <div className="what-we-do-img">
-                    <img src={what_we_do} className="wwd-img"></img>
+                <div className="wmems-img">
+                    <img src={truck_event} className="w-img"></img>
                 </div>
-                <div className="what-we-do">
+                <div className="wmems">
                     <h1>What is WMEMS?</h1>
                     <p>The Western Monmouth Emergency Medical Services is a licensed Basic Life Support agency that supports our volunteers with the New Jersey Department 
                         of Health and Senior Services. WMEMS bills patients’ insurance carriers to redeem the BLS Ambulance transportation fee reimbursement, as provided by 
@@ -86,8 +86,8 @@ export default function Home(){
                     </p>
 
                 </div>
-                <div className="our-story-img">
-                    <img src={truck_line} className="wwd-img"></img>
+                <div className="about-ems-img">
+                    <img src={truck_line} className="w-img"></img>
                    
                 </div>
 
