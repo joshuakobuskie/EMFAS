@@ -28,7 +28,7 @@ export default function Navbar() {
       </button>
 
       <nav className="links" ref={navRef}>  
-        <Link to="/" onClick={showNav}> Home</Link>
+        <Link to="/njitDev" onClick={showNav}> Home</Link>
         <Link to="/Donate" onClick={showNav}> Donate</Link>
         <Link to="/Join" onClick={showNav}>Join the Squad</Link>
         <Link to="/Officers" onClick={showNav}> Officers</Link>

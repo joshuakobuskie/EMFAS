@@ -93,10 +93,11 @@ a:link, a:visited{
  }
 
 @media only screen and (max-width: 1024px){
+    
     header .nav-btn{
         margin-left: auto;
         display: flex;
-        justify-content: right;
+        justify-content: center;
         align-items: center;
         cursor:pointer;
         background: transparent;
@@ -140,6 +141,7 @@ a:link, a:visited{
     .links a:hover{
         color:white;
         background-color: #FF7A00;
+        z-index: 4px;
     }
     .links{
     
@@ -171,13 +173,6 @@ a:link, a:visited{
     header .responsive_nav{
         transform: translateY(200vh);
     }
-
-}
-
-
-
-
-@media only screen and (max-width: 1024px){
     
     .rect1, .rect2, .rect3{
         visibility: none;
