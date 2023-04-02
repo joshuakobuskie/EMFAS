@@ -1,11 +1,20 @@
-import requests
-from bs4 import BeautifulSoup
+import pandas
 
-with open('test.xml', 'r') as f:
-    file = f.read()
+data = pandas.read_csv('Website_data_report.csv', header=1)
+response_times_list = data['RESPONSE TIME'].to_list()
+patient_mileage_list = data['Patient Mileage'].dropna().to_list()
 
-soup = BeautifulSoup(file, 'xml')
-books = soup.find_all('book')
+def calculate_avg_response_time(response_times):
+    total = sum(response_times)
+    count = len(response_times)
 
-for book in books:
-    print(book.author.get_text())
+    return round((total / count), 2)
+
+print(calculate_avg_response_time(response_times_list))
+print(len(data.index))
+print(round(sum(patient_mileage_list), 2))
+
+
+
+
+
