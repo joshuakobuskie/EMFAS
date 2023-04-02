@@ -1,19 +1,16 @@
 
 
-.join_container{
-    height: 100%;
+.join-container{
+    height: 40em;
     width: 100%;
     margin: 0 auto;
-  
+    margin-bottom:4em;
 }
 
 
-.join_title{
+.join-title{
     display: inline-block;
-    height: 15%;
-    width: auto;
-    
-  
+    width: 100%;
 }
 h1{
     text-align: center;
@@ -21,13 +18,23 @@ h1{
 
 }
 
-.join_info{
+.join-content{
     display: flex;
-    float: left;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+.join-info{
+    display: inline-block;
+    width:40%;
+    height:100%;
+
     
 }
 
-.join_form{
-    display: flex;
-    float: right;
+.join-form{
+    display: inline-block;
+    width:30%;
+    height:100%;
+
 }

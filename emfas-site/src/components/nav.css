@@ -46,11 +46,58 @@ a:link, a:visited{
     padding:5px;
 }
 
+.nav-logo {
+    margin-top: 2%;
+    margin-left:0.5%;
+    width:8%;
+     
+ }
+ 
+ .rect1{
+     display:flex;
+     width: 9.75%;
+     height: 15%;
+     background-color: #FF7A00;
+     position: absolute;
+     top: 0;
+     margin-top:0.5%;
+     margin-bottom:0.5%;
+   
+    
+ }
+ 
+ .rect2{
+     display:flex;
+     width:10%;
+     height: 15%;
+     float:left;
+     background-color: #FF7A00;
+     position: absolute;
+     top: 33.5%;
+     left: 7.8%;
+     margin-top:0.5%;
+     margin-bottom:0.5%;
+     transform:rotate(45deg);
+    
+ }
+ 
+ .rect3{
+     display:flex;
+     min-width: 84.25%;
+     height: 15%;
+     background-color: #FF7A00;
+     position: absolute;
+     bottom: 13.4%;
+     left:15.75%;
+     margin-top:0.5%;
+ }
+
 @media only screen and (max-width: 1024px){
+    
     header .nav-btn{
         margin-left: auto;
         display: flex;
-        justify-content: right;
+        justify-content: center;
         align-items: center;
         cursor:pointer;
         background: transparent;
@@ -64,10 +111,12 @@ a:link, a:visited{
         opacity: 1;
     }
 
+
+
     header nav{
-        position: fixed;
+        position: absolute;
 		top: -200vh;
-		height: 20%;
+		min-height: 100%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -92,6 +141,7 @@ a:link, a:visited{
     .links a:hover{
         color:white;
         background-color: #FF7A00;
+        z-index: 4px;
     }
     .links{
     
@@ -123,57 +173,6 @@ a:link, a:visited{
     header .responsive_nav{
         transform: translateY(200vh);
     }
-
-}
-
-.nav-logo {
-   margin-top: 2%;
-   margin-left:0.5%;
-   width:8%;
-    
-}
-
-.rect1{
-    display:flex;
-    width: 9.75%;
-    height: 15%;
-    background-color: #FF7A00;
-    position: absolute;
-    top: 0;
-    margin-top:0.5%;
-    margin-bottom:0.5%;
-  
-   
-}
-
-.rect2{
-    display:flex;
-    width:10%;
-    height: 15%;
-    float:left;
-    background-color: #FF7A00;
-    position: absolute;
-    top: 33.5%;
-    left: 7.8%;
-    margin-top:0.5%;
-    margin-bottom:0.5%;
-    transform:rotate(45deg);
-   
-}
-
-.rect3{
-    display:flex;
-    min-width: 84.25%;
-    height: 15%;
-    background-color: #FF7A00;
-    position: absolute;
-    bottom: 13.4%;
-    left:15.75%;
-    margin-top:0.5%;
-}
-
-
-@media only screen and (max-width: 1024px){
     
     .rect1, .rect2, .rect3{
         visibility: none;

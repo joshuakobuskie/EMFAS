@@ -22,7 +22,7 @@ const Join_form=()=>{
       }
 
     return(
-        <div className={Join_formCSS.container}>
+        <div className="form-container">
             <form >
                 <div className="field">
                   <h2><label>Name</label></h2>  
