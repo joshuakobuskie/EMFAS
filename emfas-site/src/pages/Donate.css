@@ -64,7 +64,7 @@ h1{
 .img{
     
     min-height: 100%;
-    width:100%;
+    min-width:100%;
    
     display: flex;
     flex-flow: column;
@@ -79,7 +79,6 @@ h1{
 }
 
 .img img{
-    position: relative;
     max-width: 50%;
     max-height:50%;
 }
@@ -102,8 +101,6 @@ h1{
     display: flex;
     justify-content: center;
     font-size: 1em;
-    width: 100%;
-
 }
 
 .donate-pg a:hover{
@@ -127,14 +124,14 @@ h1{
         max-width: 100%;
         overflow: hidden;
         max-height: fit-content;
-
     }
     .Donate{
         max-width: 100%;
-        min-height: 60em;
+        min-height: 40em;
         display: flex;
         flex-flow: column;
         background-color: white;
+        margin-bottom: 0;
     }
 
     .contact-info{
@@ -149,34 +146,33 @@ h1{
     }
 
 
+    .or{
+        margin-bottom: 0;
+    }
     .paypal{
         width: 100%;
         padding: 2em;
         margin:3em;
-        height: 100%;
+        max-height: 50%;
         display: flex;
         justify-content: center;
         align-items:center ;
         margin-bottom: 0em;
-        height: 15em;
+        margin-top: 0;
+        position: relative;  
+    }
+    .img{
+        position: absolute;
+        max-height:100%;
+    }
+    .img a{
+        min-width:80%;
+        max-height: 100%;
+    }
     
-    }
-
-    .or{
-        margin-bottom: 0;
-
-    }
-
-    .img img{
-        position: relative;
-        max-width:80%;
-        max-height:50%;
-    }
-
     .contact-vp{
         display: flex;
         justify-content: center;
-        margin-bottom: 3em;
         font-size: .85em;
     }
     
@@ -188,11 +184,14 @@ h1{
 
 
 
+
 @media only screen and (max-width: 400px){
     .contact-info{
         font-size: 1em;
     }
-
+    .Address{
+        font-size: .90em;
+    }
     .contact-vp{
         font-size: .75em;
     }

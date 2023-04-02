@@ -19,7 +19,7 @@ export default function  Footer(){
                     <ul>
                         <p>7 Sanford St</p>
                         <p>Manalapan Township, NJ 07726</p>
-                        <p>email@email.com</p>
+                        <p>membership@emfas.org</p>
                         <p>(732) 850-6488</p>
                     </ul>
                    

@@ -16,7 +16,7 @@ export default function Home(){
                     <h1>First Aid Squad</h1>
                     
                     <table className="stats-table">
-                        <caption><h3>Monthly Stats</h3></caption>
+                        <caption><h3>Daily Stats</h3></caption>
                         <tr>
                             <td>Avg Response Time</td>
                             <td>Total Calls Taken</td>
