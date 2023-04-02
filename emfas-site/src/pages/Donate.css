@@ -7,6 +7,7 @@
     margin-bottom:3em;
     display: flex;
     align-items: center;
+    justify-content: center;
 
 
 }
@@ -20,7 +21,7 @@ h1{
 
 .contact-info{
 
-    width: 40%;
+    width: 35%;
     padding: 2em;
     margin:3em;
     height: 100%;
@@ -30,7 +31,7 @@ h1{
 }
 
 .or{
-    width:20%;
+    width:0.5em;
     text-align: center;
 }
 
@@ -50,7 +51,7 @@ h1{
 
 
 .paypal{
-    width: 40%;
+    width: 35%;
     padding: 2em;
     margin:3em;
     height: 100%;
