@@ -16,7 +16,7 @@
 .sameline h2{
     margin: auto;
 }
-.container label{
+.form-container label{
     display:flex;
     font-size: large;
     color:#1B1E62;
@@ -24,7 +24,7 @@
 }
 
 
-.container input{
+.form-container input{
     border-radius: 25px;
     border: none;
     padding: 15px;
@@ -36,7 +36,7 @@
 }
 
 
-.container button{
+.form-container button{
     display: flex;
     border-radius: 25px;
     background-color: #FF7A00;
@@ -50,4 +50,26 @@
     justify-content: center;
     align-items: center;
     
+}
+
+
+@media only screen and (max-width: 1024px){
+    .form-container{
+        justify-content: center;
+        padding:2em;
+    }
+
+    .form-container label{
+        font-size: .65em;
+    }
+
+    .form-container input{
+        max-height: 2em;
+        min-height: 1em;
+    }
+
+
+
+
+
 }
