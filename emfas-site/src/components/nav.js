@@ -39,11 +39,6 @@ export default function Navbar() {
       </button>
       
       </nav>
-
-
-
-     
-        
     </header>
   )
 }
