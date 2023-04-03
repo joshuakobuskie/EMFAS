@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/nav';
+import WeatherAlert from './components/weather';
 import Home from './pages/Home';
 import Donate from './pages/Donate';
 import Join from './pages/Join';
@@ -8,11 +9,13 @@ import {Route, Routes} from "react-router-dom"
 import Footer from './components/footer';
 
 
+
 function App() {
   return (
    <>
     <div>
       <Navbar className="nav"/>
+      <WeatherAlert/>
     </div>
 
     <div className="container">
@@ -25,8 +28,9 @@ function App() {
           <Route path="/Join" element={<Join /> } />
           <Route path="/Officers" element={<Officers />} />
         </Routes>
-        
+
         <Footer className="foot"/>
+        
         
       </div>  
     
