@@ -1,27 +1,25 @@
 
 
 .wrapper{
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width:100%;
-    height:100%;
-
 }
 
 .accordion {
+    display: inline-block;  
     border-radius: 15px;
-    overflow: hidden;
-    width:75%;
+    background-color: #E8E8EF;
+    width:80%;
+    height:max-content;
+    max-height: 100%;
 }
 
 
 .item{
-
-    background:#E8E8EF;
-    padding: 10px 20px;
+    padding:.8em;
     cursor: pointer;
-    
 }
 
 
@@ -37,6 +35,7 @@
 
 .content{
     color: black;
+    font-size: .9em;
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0,1,0,1);
@@ -46,4 +45,21 @@
     height: auto;
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1,0,1,0);
+}
+
+@media only screen and (max-width: 1024px){
+
+    .wrapper{
+        height: max-content;
+    }
+   
+    .item{
+        padding-top:0;
+        padding-bottom:0;
+    }
+
+    .content.show{
+        max-height: 9999px;
+        padding-bottom:0.5em;
+    }
 }
