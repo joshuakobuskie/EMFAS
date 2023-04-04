@@ -23,7 +23,7 @@ const Join_form=()=>{
 
     return(
         <div className="form-container">
-            <form >
+            <form action='#'>
                 <div className="field">
                   <h2><label>Name</label></h2>  
                     <input type="text" required value={name} onChange={(e)=> setName(e.target.value)} ></input>
