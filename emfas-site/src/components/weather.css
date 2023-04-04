@@ -1,0 +1,22 @@
+.weatherAlert{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 0;
+    
+}
+
+.w-info{
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+    width: 70%;
+    background-color: red;
+    opacity: 75%;
+    border-radius: 25px;
+}
+
+.w-info:empty{
+    background-color: aquamarine;
+}
