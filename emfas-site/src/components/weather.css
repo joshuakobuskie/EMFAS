@@ -7,6 +7,10 @@
     
 }
 
+.headline{
+    font-weight: bolder;
+}
+
 .w-info{
     padding: 1em;
     display: flex;
@@ -19,4 +23,22 @@
 
 .w-info:empty{
     background-color: aquamarine;
+}
+
+@media only screen and (max-width: 1024px){
+
+    .weatherAlert{
+        text-align: initial;
+    }
+    .w-info{
+        margin-top:1em;
+        display: flex;
+        flex-flow: column;
+        width: 90%;
+        background-color: red;
+        opacity: 75%;
+        border-radius: 25px;
+        font-size: .75em;
+    }
+
 }

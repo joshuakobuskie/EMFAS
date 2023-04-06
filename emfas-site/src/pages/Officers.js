@@ -7,13 +7,11 @@ import { json } from 'react-router-dom';
 
 export default function Officers(){
     const [officer, initOfficer] = useState([])
-    //let headline; let instruction;
     const fetchData = async () => {
     const response = await fetch('http://emfas.org/njitDev/getOfficers.php'
 )
     if (!response.ok) { console.log(response);
         throw new Error('Data coud not be fetched!')
-       
     } else {
         return await response.json()
     }
@@ -27,8 +25,6 @@ export default function Officers(){
         console.log(e.message)
         })
     }, [])
-
-    console.log(officer);
 
     return(
         <div className="officers-pg">
