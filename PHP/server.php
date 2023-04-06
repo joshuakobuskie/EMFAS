@@ -19,21 +19,24 @@
     $email = $_POST['email'];
     echo (" email: $email");
 */
-if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['phone']) && isset($_POST['email']))
-{
 
-    $mail = new PHPMailer(true);
+   $mail = new PHPMailer(true);
+   $alert='';
+
+  if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['phone']) && isset($_POST['email']))
+  {
+
     $name= $_POST['name'];
     $age = $_POST['age'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
-
+    try{
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;    
         $mail->isSMTP();
         $mail->Host='ssl://smtp.gmail.com';
         $mail->SMTPAuth =true;
         $mail->Username ='data@emfas.org';
-        $mail->Password='wsmtirmrlcvwueax'; // two way verification so that the actual password is not used
+        $mail->Password='radfkkqukocsltyh'; // two way verification generated password
         $mail->SMTPSecure='ssl';
         //PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port =465;
@@ -41,61 +44,17 @@ if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['phone']) && is
         $mail->setFrom('data@emfas.org','Mailer');
         $mail->addAddress('data@emfas.org'); //Email address where you want to receive the emails
         $mail->isHTML(true);
-        $mail->Subject= 'Message Recieved From Join Page';
+        $mail->Subject= 'Message Received From Join Page';
         $mail->Body= "Name: $name <br>Age: $age <br>Phone: $phone <br>Email: $email"; 
         $mail ->send();
-
         $alert= "<div class='alert-sucess'><span>Your information has been submitted!</span></div>";
-        echo("YA");
-}
-/*
 
-if( empty($_POST['name']) && empty($_POST['age']) && empty($_POST['phone']) && empty($_POST['email'])) {
-    echo json_encode(
-        [
-           "sent" => false,
-           "message" => "form not filled correctly"
-        ]
-    ); 
-    exit();
-}
+    }catch(Exception $e)  {  
+       $alert="not submitted $e";
 
-
-
-    if($_POST) {
-        $mail = new PHPMailer(true);
-        $name= $_POST['name'];
-        $age = $_POST['age'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-        try{
-            $mail->isSMTP();
-            $mail->Host='stmp.gmail.com';
-            $mail->SMTPAuth =true;
-            $mail->Username ='data@emfas.org';
-            $mail->Password='emfas2621'; // two way verification so that the actual password is not used
-            $mail->SMTPSecure='tls';
-            $mail->Port ='587';
-
-            $mail->setFrom('data@emfas.org');
-            $mail->addAddress('data@emfas.org'); //Email address where you want to receive the emails
-            $mail->isHTML(true);
-            $mail->Subject= 'Message Recieved From Join Page';
-            $mail->Body= "Name: $name <br>Age: $age <br>Phone: $phone <br>Email: $email"; 
-            $mail ->send();
-
-            $alert= "<div class='alert-sucess'><span>Your information has been submitted!</span></div>";
-
-
-        } catch(Exception $e){
-            $alert ="<div class='alert-error'><span>'Somenthing went wrong. Please try again.'</span>";
-
-        }
     }
-  
-  
+}
 
 
-*/
  
 ?>
