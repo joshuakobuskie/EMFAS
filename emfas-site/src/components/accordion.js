@@ -40,7 +40,6 @@ const data=[{
     answer:
         'No  previous training is necessary to join. Anyone over the age of 16 can join the squad.\
         Since riding members need to be on call for only one shift per week,\
-        Since riding members need to be on call for only one shift per week,\
         we attract members from all walks of life.',
 
 },
@@ -88,7 +87,7 @@ const data=[{
 
     question:'How do I join? ',
     answer:
-        'If you are 18 years of age or older, call (732) 850-6488 or e-mail membership@emfas.org for a time/date to come in learn more about \
+        'If you are 18 years of age or older, call (732) 850-6488 or e-mail membership@emfas.org for a time/date to come in and learn more about \
         the squad! \n\
         Interested in the cadet program? Are you between the ages of 16 & 18? If so please contact the cadets at cadets@emfas.org ',
         
