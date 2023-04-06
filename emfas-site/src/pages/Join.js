@@ -1,10 +1,6 @@
 import Accordion from "../components/accordion";
-import Join_form  from "../components/join_form";
-import JoinCSS from "./Join.css"
-
-
-
-
+import JoinForm  from "../components/join_form";
+import "./Join.css"
 
 
 export default function Join(){
@@ -18,7 +14,7 @@ export default function Join(){
                 <Accordion></Accordion>                   
             </div>
             <div className="join-form">           
-                <Join_form></Join_form>    
+                <JoinForm></JoinForm>    
             </div>
         </div>
            
