@@ -7,7 +7,7 @@ import Join from './pages/Join';
 import Officers from './pages/Officers';
 import {Route, Routes} from "react-router-dom"
 import Footer from './components/footer';
-
+import Edit_Officer from './pages/edit_officer';
 
 
 function App() {
@@ -27,6 +27,7 @@ function App() {
           <Route path="/Donate" element={<Donate />} />
           <Route path="/Join" element={<Join /> } />
           <Route path="/Officers" element={<Officers />} />
+          <Route path="/edit" element={<Edit_Officer/>} />
         </Routes>
 
         <Footer className="foot"/>
