@@ -25,10 +25,6 @@ ul{
     padding:0
 }
 
-.foot-links a:hover{
-    color:#FF7A00;
-}
-
 .contact{
   display: flex;
   margin: 0;
@@ -51,4 +47,11 @@ ul{
 .contact p{
     margin:0;
   
+}
+
+@media only screen and (max-width: 1024px){
+    .foot-links a:visited{
+      color:black;
+    }
+
 }

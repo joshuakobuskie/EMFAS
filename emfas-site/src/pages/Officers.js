@@ -26,6 +26,7 @@ export default function Officers(){
         })
     }, [])
 
+
     return(
         <div className="officers-pg">
             <div>

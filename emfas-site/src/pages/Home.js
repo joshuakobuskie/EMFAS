@@ -5,10 +5,9 @@ import truck_event from "../images/wwd.png";
 import truck_line from "../truck_lineup.png";
 
 
+
 export default function Home(){
     return(
-        
-        
         <div className="home">
             <div className="block1">
                 <div className="title-stats">
@@ -47,7 +46,7 @@ export default function Home(){
                         cardiac emergencies, epinephrine for severe allergic reactions, C-PAP oxygen delivery for acute respiratory emergencies, Narcan for 
                         opioid overdoses, and other lifesaving tools. We continue to recruit new volunteers, and provide lifesaving training free of charge to 
                         all applicants. If you would like to learn more about volunteering with the squad, we provide a “ride-along” program where you can join 
-                        us on a shift with no strings attached. More details about getting involved can be found on our “Join the Team” page.
+                        us on a shift with no strings attached. More details about getting involved can be found on our “Join the Squad” page.
 
                     </p>
 

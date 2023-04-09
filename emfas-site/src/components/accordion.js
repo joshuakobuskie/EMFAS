@@ -21,7 +21,7 @@ export default function  Accordion(){
                     <div className='item'>
                         <div className='title' onClick={()=>toggle(i)}>
                             <h2>{item.question}</h2>
-                          <h2><span> {selected === i ? '-': '+'}</span></h2> 
+                          <h2><span className="selected"> {selected === i ? '-': '+'}</span></h2> 
                         </div>
                         <div className={selected === i ? 'content show': 'content'}>{item.answer}</div>
                     </div>

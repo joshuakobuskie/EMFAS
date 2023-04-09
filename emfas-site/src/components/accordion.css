@@ -60,3 +60,10 @@
         max-height: 9999px;
     }
 }
+
+
+@media only screen and (max-width: 460px){
+    .selected{
+        padding-left:1em;
+    }
+}

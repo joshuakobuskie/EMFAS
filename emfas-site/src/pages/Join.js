@@ -7,7 +7,7 @@ export default function Join(){
     return(
      <div className="join-container">  
         <div className="join-title">
-            <h1>Join Us!</h1>
+            <h1>Join The Squad</h1>
         </div>
         <div className="join-content">
              <div className="join-info">           
