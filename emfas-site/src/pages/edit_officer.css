@@ -1,0 +1,18 @@
+.officers-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.officers-form ul{
+    list-style-type: none;
+
+}
+
+.officers-form label{
+    margin:1em;
+}
+
+.officers-form li{
+    margin: 1em;
+}
