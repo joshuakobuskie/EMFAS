@@ -57,7 +57,6 @@ export default function Edit_Officer(){
         setOfficer(data);
         console.log(officer);
 
-
     }
 
     const submit = (e) => {
