@@ -1,6 +1,6 @@
 import "./edit_officer.css";
-import { useState, useEffect } from 'react';
-import $ from "jquery";
+import { useState, useEffect, useRef } from 'react';
+import $, { post } from "jquery";
 
 
 export default function Edit_Officer(){
@@ -9,10 +9,12 @@ export default function Edit_Officer(){
 
     const [officer, setOfficer] = useState([])
     const [orig_officer, saveOrig] = useState([]);
+    
+   
 
     const fetchData = async () => {
-    const response = await fetch('http://emfas.org/njitDev/getOfficers.php'
-)
+        const response = await fetch('http://emfas.org/njitDev/getOfficers.php'
+    )
     if (!response.ok) { console.log(response);
         throw new Error('Data coud not be fetched!')
     } else {
@@ -20,30 +22,51 @@ export default function Edit_Officer(){
     }
     }
     useEffect(() => {
+        //prevOfficer.current = officer;
+        fetchData()
+            .then((res) => {
+
+            saveOrig(res);
+
+            })
+            .catch((e) => {
+            //console.log(e.message)
+            })
+        
+        }, [])
+   
+
+    useEffect(() => {
+    //prevOfficer.current = officer;
     fetchData()
         .then((res) => {
+        //console.log(res);
         setOfficer(res);
-        saveOrig(res);
+        //prevOfficer.current = officer;
+        //saveOrig(res);
         })
         .catch((e) => {
-        console.log(e.message)
+        //console.log(e.message)
         })
+    
     }, [])
 
-    //const orig_officer = officer;
-    //console.log("original", orig_officer);
- 
-
+  
     
-    //const [formFields, setFormFields] = useState([{position: ' ' , name: ' ' , email: ' ', phone: ' '}]);
+    //console.log("original", orig_officer);
+    //orig_officer = fetchData()
+    //console.log(orig_officer);
+    //console.log(prevOfficer.current);
+
+
+
 
     const handleFormChange = (e, i) => {
         //console.log(i, e.target.name);
         let data = [...officer];
         data[i][e.target.name] = e.target.value;
         //console.log(data);
-        setOfficer(data);
-        //console.log(officer);
+        //setOfficer(data);
 
     }
 
@@ -51,70 +74,85 @@ export default function Edit_Officer(){
     const submit = (e) => {
         e.preventDefault();
         //console.log(officer.length);
-        let len = officer.length;        
+        let len = officer.length;    
+        //console.log(len, orig_officer.length);    
         let data;
-        if(officer === orig_officer){
-            alert("Nothing to change!");
-            return;
-        }
+      
         officer.map((officer,i)=> {
+        
+        
+            if(i <= len-1 && orig_officer.length == len){
+                
+                    console.log(i, "what", len-1, orig_officer.length);
+                    
+                    
+                        data = {
+                            NewPos: officer.Position,
+                            NewName: officer.Name,
+                            NewEmail: officer.Email,
+                            NewPhone: officer.Phone,
+                            Pass: "Hi",
+                            CurPos: orig_officer[i].Position,
+                            CurName: orig_officer[i].Name,
+                           
+                        };
 
-            if(i < len-1){
-                //console.log(i);
-
-                data = {
-                    NewPos: officer.Position,
-                    NewName: officer.Name,
-                    NewEmail: officer.Email,
-                    NewPhone: officer.Phone,
-                    CurPos: orig_officer[i].Position,
-                    CurName: orig_officer[i].Name
-                };
+                    //console.log(data.CurPos, officer.Position);
+                    //console.log(data.CurName, officer.Name);
+                    //if cur pos not same as new position, update
+                    if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone){
+                        console.log("here");
+                        $.ajax({
+                            type: "POST",
+                            url: 'https://emfas.org/njitDev/updateOfficers.php',
+                            data: data,
+                            success(data){
+                                //alert("Your information has been submitted!");
+                                console.log(data);
+                            },
+                            error(err) {
+                                alert("Something went wrong. Please try again.");
+                            }
+                
+                        });
+                    }
+                }
             
-              /* $.ajax({
-                    type: "POST",
-                    url: 'https://emfas.org/njitDev/updateOfficers.php',
-                    data: data,
-                    success(data){
-                        //alert("Your information has been submitted!");
-                        console.log(data);
-                    },
-                    error(err) {
-                        //alert("Something went wrong. Please try again.");
-                      }
-         
-                });*/
-
-
-
-            }
+            
+            
             else{
+                //console.log(i);
+                console.log("here");
+                //console.log(officer);
                 data = {
                     NewPos: officer.Position,
                     NewName: officer.Name,
                     NewEmail: officer.Email,
                     NewPhone: officer.Phone,
-                    CurName: " ",
-                    CurPos: " "
+                    Pass:"Hi"
                 };
+                console.log(i, len, orig_officer.length);
+
+                if( len > orig_officer.length && i > orig_officer.length-1){
+                    console.log("Adding")
+                    //console.log(data)
+                    $.ajax({
+                        type: "POST",
+                        url: 'https://emfas.org/njitDev/addOfficers.php',
+                        data: data,
+                        success(data){
+                            console.log(data);
+                            //alert("Your information has been submitted!");
+                        },
+                        error(err) {
+                            alert("Something went wrong. Please try again.");
+                          }
+             
+                    });
+                }
             
             }
                   
-           if(data.CurPos === " " && data.CurName === " "){
-                $.ajax({
-                    type: "POST",
-                    url: 'https://emfas.org/njitDev/addOfficers.php',
-                    data: data,
-                    success(data){
-                        alert("Your information has been submitted!");
-                    },
-                    error(err) {
-                        alert("Something went wrong. Please try again.");
-                      }
-         
-                });
-            }
-
 
         });
    
@@ -122,18 +160,23 @@ export default function Edit_Officer(){
 
     
 
+
+
+
+
     const add = (e) =>{
         e.preventDefault();
         let object = {
-            Position: ' ',
-            Name: ' ',
-            Email: ' ',
-            Phone: ' '
+            Position: '',
+            Name: '',
+            Email: '',
+            Phone: ''
         };
         setOfficer([...officer, object]);
         //console.log(officer);
 
     }
+
 
     const remove = (e, i) =>{
         //e.preventDefault();
@@ -141,8 +184,12 @@ export default function Edit_Officer(){
         //console.log(orig_officer[i].Position);
         let post = {
             CurPos: data[i].Position,
-            CurName: data[i].Name
+            CurName: data[i].Name,
+            Pass: "Hi"
         }
+
+        data.splice(i, 1);
+        setOfficer(data);
 
         console.log(post);
 
@@ -164,7 +211,6 @@ export default function Edit_Officer(){
         });
         
 
-        data.splice(i, 1);
         //setOfficer(data);
 
     }
@@ -210,6 +256,5 @@ export default function Edit_Officer(){
 
        
 }
-
 
 
