@@ -27,7 +27,7 @@ export default function WeatherAlert() {
     if(weatherItems.length !== 0){ 
         //console.log(weatherItems.features.length);
         if(weatherItems.features.length !== 0){
-            console.log(weatherItems.features[0].properties.headline)
+            //console.log(weatherItems.features[0].properties.headline)
 
             headline = weatherItems.features[0].properties.headline;
             instruction = weatherItems.features[0].properties.instruction;

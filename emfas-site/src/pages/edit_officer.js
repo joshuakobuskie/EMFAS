@@ -8,6 +8,8 @@ export default function Edit_Officer(){
     
 
     const [officer, setOfficer] = useState([])
+    const [orig_officer, saveOrig] = useState([]);
+
     const fetchData = async () => {
     const response = await fetch('http://emfas.org/njitDev/getOfficers.php'
 )
@@ -20,33 +22,19 @@ export default function Edit_Officer(){
     useEffect(() => {
     fetchData()
         .then((res) => {
-        setOfficer(res)
+        setOfficer(res);
+        saveOrig(res);
         })
         .catch((e) => {
         console.log(e.message)
         })
     }, [])
 
+    //const orig_officer = officer;
+    //console.log("original", orig_officer);
  
 
-     const handleClick=(e)=> {
-        e.preventDefault();
-         const form = $(e.target);
-         $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success(data){
-                alert("Your information has been submitted!");
-                console.log(data)
-            },
-            error(err) {
-                alert("Something went wrong. Please try again.");
-              }
-
-        });
-      };
-
+    
     //const [formFields, setFormFields] = useState([{position: ' ' , name: ' ' , email: ' ', phone: ' '}]);
 
     const handleFormChange = (e, i) => {
@@ -55,14 +43,84 @@ export default function Edit_Officer(){
         data[i][e.target.name] = e.target.value;
         //console.log(data);
         setOfficer(data);
-        console.log(officer);
+        //console.log(officer);
 
     }
 
+    //const [result, setResult]=useState('');
     const submit = (e) => {
         e.preventDefault();
-        console.log(officer);
-    }
+        //console.log(officer.length);
+        let len = officer.length;        
+        let data;
+        if(officer === orig_officer){
+            alert("Nothing to change!");
+            return;
+        }
+        officer.map((officer,i)=> {
+
+            if(i < len-1){
+                //console.log(i);
+
+                data = {
+                    NewPos: officer.Position,
+                    NewName: officer.Name,
+                    NewEmail: officer.Email,
+                    NewPhone: officer.Phone,
+                    CurPos: orig_officer[i].Position,
+                    CurName: orig_officer[i].Name
+                };
+            
+              /* $.ajax({
+                    type: "POST",
+                    url: 'https://emfas.org/njitDev/updateOfficers.php',
+                    data: data,
+                    success(data){
+                        //alert("Your information has been submitted!");
+                        console.log(data);
+                    },
+                    error(err) {
+                        //alert("Something went wrong. Please try again.");
+                      }
+         
+                });*/
+
+
+
+            }
+            else{
+                data = {
+                    NewPos: officer.Position,
+                    NewName: officer.Name,
+                    NewEmail: officer.Email,
+                    NewPhone: officer.Phone,
+                    CurName: " ",
+                    CurPos: " "
+                };
+            
+            }
+                  
+           if(data.CurPos === " " && data.CurName === " "){
+                $.ajax({
+                    type: "POST",
+                    url: 'https://emfas.org/njitDev/addOfficers.php',
+                    data: data,
+                    success(data){
+                        alert("Your information has been submitted!");
+                    },
+                    error(err) {
+                        alert("Something went wrong. Please try again.");
+                      }
+         
+                });
+            }
+
+
+        });
+   
+     };
+
+    
 
     const add = (e) =>{
         e.preventDefault();
@@ -73,15 +131,41 @@ export default function Edit_Officer(){
             Phone: ' '
         };
         setOfficer([...officer, object]);
-        console.log(officer);
+        //console.log(officer);
 
     }
 
     const remove = (e, i) =>{
-        e.preventDefault();
+        //e.preventDefault();
         let data = [...officer];
+        //console.log(orig_officer[i].Position);
+        let post = {
+            CurPos: data[i].Position,
+            CurName: data[i].Name
+        }
+
+        console.log(post);
+
+        //console.log(data);
+
+        $.ajax({
+            type: "POST",
+            url: 'https://emfas.org/njitDev/removeOfficers.php',
+            data: post,
+            success(data){
+                //alert("Your information has been submitted!");
+                console.log(data);
+
+            },
+            error(err) {
+                alert("Something went wrong. Please try again.");
+              }
+ 
+        });
+        
+
         data.splice(i, 1);
-        setOfficer(data);
+        //setOfficer(data);
 
     }
 
