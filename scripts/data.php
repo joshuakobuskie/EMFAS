@@ -1,3 +1,4 @@
+#!/usr/bin/php -q
 
 <?php
 $f = file_get_contents('php://stdin');
@@ -12,7 +13,7 @@ foreach ($email as $line) {
         continue;
     }
 
-    if (strpos($line, "==") !== false and $beginningFound) {
+    if (strpos($line, "--") !== false and $beginningFound) {
         break;
     }
 
@@ -69,7 +70,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-  
+
 $sql = $conn->prepare("UPDATE `Stats` SET `CallsTaken` = ?,`ResponseTime` = ?,`MilesDriven` = ?");
 $sql->bind_param("idd", $totalCallsTaken, $avgResponseTime, $milesDriven);
 $sql->execute();
@@ -84,6 +85,11 @@ else{
 }
   
 $conn->close();
+
+date_default_timezone_set('UTC');
+$file = fopen("temp.txt", "w");
+fwrite($file, "EXECUTED THE SCRIPT: " . date(DATE_RFC2822));
+fclose($file);
 ?>
 
 
