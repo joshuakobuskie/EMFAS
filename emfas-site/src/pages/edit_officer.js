@@ -207,22 +207,20 @@ export default function Edit_Officer(){
                         <input type="text" id="Email" name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Phone">Phone:</label>
                         <input type="text" id="Phone" name="Phone" defaultValue={officer.Phone}   onChange={e => handleFormChange(e, i)}></input>
-                        <button className="button" onClick={e => remove(e, i) }>Remove</button>
+                        <button className="rm-button" onClick={e => remove(e, i) }>Remove</button>
                     </li> 
                     
                     )}
                 
                     <li>
-                       <button onClick={e => add(e)}>Add</button>
+                       <button id="add-btn" onClick={e => add(e)}>Add</button>
                     </li>
                     <li> 
                         <label htmlFor="Pass">Password</label>
                         <input required type="password" id="Pass" name="Pass" ></input>
+                        <button id="submit-btn" type="submit">Submit</button>
                     </li>
-                    <li> 
-                        <button type="submit">Submit</button>
-                        
-                    </li>
+                  
                 
                     
                 </form>

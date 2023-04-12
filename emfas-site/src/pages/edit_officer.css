@@ -16,3 +16,68 @@
 .officers-form li{
     margin: 1em;
 }
+
+.officers-form label{
+ 
+    font-size: large;
+    color:#1B1E62;
+    
+}
+
+
+.officers-form input{
+    border-radius: 25px;
+    border: none;
+    padding: 15px;
+    font-size: medium;
+    min-height: 10px;
+    min-width: 50px;
+    background-color: #D9D9D9;
+
+}
+
+
+
+
+.rm-button{
+
+    border-radius: 25px;
+    background-color: #FF7A00;
+    font-size: large;
+    color:white;
+    border: none;
+    min-height: 30px;
+    min-width: 100px;
+    cursor: pointer;
+    margin: .5em;
+  
+    
+}
+
+#submit-btn{
+    border-radius: 25px;
+    background-color: #FF7A00;
+    font-size: large;
+    color:white;
+    border: none;
+    min-height: 30px;
+    min-width: 100px;
+    cursor: pointer;
+    margin: .5em;
+}
+
+#add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 25px;
+    background-color: #FF7A00;
+    font-size: large;
+    color:white;
+    border: none;
+    min-height: 30px;
+    min-width: 100px;
+    cursor: pointer;
+
+}
