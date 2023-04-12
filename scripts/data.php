@@ -6,19 +6,25 @@ $pipedEmailIn = file_get_contents('php://stdin');
 // will catch things that aren't boundaries but is enough for finding the attachment
 $emailParts = explode("--", $pipedEmailIn);
 $csvData = "";
+$beginningFound = false;
 
-// finds attachment and splits it into headers and data
+// finds attachment
 foreach ($emailParts as $part) {
     if (strpos($part, "attachment") !== false and strpos($part, "csv")) {
-        $attachmentParts = explode("\r\n\r\n", $part);
+        $attachment = explode("\n", $part);
         break;
     }
 }
 
-// decodes csv data
-$attachmentData = explode("\n", $attachmentParts[1]);
-foreach ($attachmentData as $line) {
-    $csvData .= base64_decode($line);
+// finds csv data and decodes it
+foreach ($attachment as $line) {
+    if (strpos(base64_decode($line), "Call Date") !== false) {
+        $beginningFound = true;
+    }
+
+    if ($beginningFound) {
+        $csvData .= base64_decode($line);
+    }
 }
 
 // removes title from data
@@ -99,7 +105,12 @@ foreach ($csvArray as $row) {
     }
 }
 
-$avgResponseTime = $responseTimeSum / $responseTimeCounter;
+if ($responseTimeCounter != 0) {
+    $avgResponseTime = $responseTimeSum / $responseTimeCounter;
+}
+else {
+    $avgResponseTime = 0;
+}
 
 // print_r($avgResponseTime . "\n");
 // print_r($totalCallsTaken . "\n");
@@ -118,24 +129,23 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// update data in database
 $sql = $conn->prepare("UPDATE `Stats` SET `CallsTaken` = ?,`ResponseTime` = ?,`MilesDriven` = ?");
 $sql->bind_param("idd", $totalCallsTaken, $avgResponseTime, $milesDriven);
 $sql->execute();
 $result = $sql->get_result();
-
 $sql->close();
-if ($result){
+    
+if ($result) {
     echo json_encode("Success");
 }
 else{
-    echo json_encode("Failed!");
+    echo json_encode("Failed");
 }
-  
 $conn->close();
 
 date_default_timezone_set('UTC');
 $file = fopen("temp.txt", "w");
-fwrite($file, "EXECUTED THE SCRIPT: " . date(DATE_RFC2822));
+fwrite($file, "EXECUTED THE SCRIPT: " . date(DATE_RFC2822) . "\n");
+fwrite($file, $avgResponseTime . " " . $totalCallsTaken . " " . $milesDriven);
 fclose($file);
 ?>
