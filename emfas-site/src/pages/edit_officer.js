@@ -5,7 +5,6 @@ import $, { post } from "jquery";
 
 export default function Edit_Officer(){
 
-
     const [officer, setOfficer] = useState([])
     const [orig_officer, saveOrig] = useState([]);
     
@@ -54,7 +53,7 @@ export default function Edit_Officer(){
         let len = officer.length;    
         //console.log(len, orig_officer.length);    
         let data;
-        
+
         officer.map((officer,i)=> {
         
             //console.log(officer);
@@ -70,13 +69,15 @@ export default function Edit_Officer(){
             //console.log(i, orig_officer.length-1);
             if(i > orig_officer.length-1){
                 //console.log("adding");
+                console.log(data);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/addOfficers.php',
                     data: data,
                     success(data){
-                        //alert("Your information has been submitted!");
+                     
                         window.location.reload();
+                        alert("Your information has been submitted!");
                         console.log("Officer Added");
                         //console.log(data);
                     },
@@ -88,31 +89,32 @@ export default function Edit_Officer(){
 
                 
             }
-            //if(orig_officer.length === len){
             else{
                 data = {
                     NewPos: officer.Position,
                     NewName: officer.Name,
                     NewEmail: officer.Email,
                     NewPhone: officer.Phone,
-                    Pass: "Hi",
+                    Pass: passwd.value,
                     CurPos: orig_officer[i].Position,
                     CurName: orig_officer[i].Name
                 }
                 //console.log(data);
                 
-            }
+            
+            if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone ){
+         
 
-            //console.log(data);
+                console.log(i, data);
+                console.log(i, officer);
 
-            if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone){
-                //console.log(data);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/updateOfficers.php',
                     data: data,
                     success(data){
-                        window.location.reload();
+                        //alert("Your information has been submitted!");
+                        //window.location.reload();
                         console.log("Officer Updated");
                     },
                     error(err) {
@@ -121,8 +123,11 @@ export default function Edit_Officer(){
         
                 });
             }
+        }
 
         });
+
+    
 
         //window.location.reload();
    
@@ -141,42 +146,47 @@ export default function Edit_Officer(){
 
     }
 
-
     const remove = (e, i) =>{
-        //e.preventDefault();
-        let data = [...officer];
-        //console.log(orig_officer[i].Position);
-        let post = {
-            CurPos: data[i].Position,
-            CurName: data[i].Name,
-            Pass: "Hi"
+        e.preventDefault();
+        let passwd = document.getElementById("Pass");
+        if(window.confirm("Are you sure you want to remove this officer?")){
+            let officer_data = [...officer];
+            
+            //if officer already existed in the db
+            if( i <= orig_officer.length-1){
+
+                //console.log(orig_officer[i].Position);
+                let post = {
+                    CurPos: officer_data[i].Position,
+                    CurName: officer_data[i].Name,
+                    Pass: passwd.value
+                }
+            
+                $.ajax({
+                    type: "POST",
+                    url: 'https://emfas.org/njitDev/removeOfficers.php',
+                    data: post,
+                    async: false,
+                    success: function(data){
+                        if(data == '"Invalid Credentials"'){
+                            alert("Something went wrong! Try again");
+                        }
+                        else{
+                            officer_data.splice(i, 1);
+                            setOfficer(officer_data);
+                            alert("Officer Deleted");
+                        }
+                    },
+                });
+            }
+            //new officer field that you want to delete
+            else{
+                officer_data.splice(i, 1);
+                setOfficer(officer_data);
+            }
+           
         }
-
-        data.splice(i, 1);
-        setOfficer(data);
-
-        console.log(post);
-
-        //console.log(data);
-
-        $.ajax({
-            type: "POST",
-            url: 'https://emfas.org/njitDev/removeOfficers.php',
-            data: post,
-            success(data){
-                //alert("Your information has been submitted!");
-                console.log(data);
-
-            },
-            error(err) {
-                alert("Something went wrong. Please try again.");
-              }
- 
-        });
-        
-
-        //setOfficer(data);
-
+    
     }
 
     return(
@@ -207,7 +217,7 @@ export default function Edit_Officer(){
                     </li>
                     <li> 
                         <label htmlFor="Pass">Password</label>
-                        <input type="text" id="Pass" name="Pass" ></input>
+                        <input required type="password" id="Pass" name="Pass" ></input>
                     </li>
                     <li> 
                         <button type="submit">Submit</button>
