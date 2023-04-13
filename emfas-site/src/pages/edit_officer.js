@@ -39,7 +39,7 @@ export default function Edit_Officer(){
     
     }, [])
 
-    //console.log(officer);
+
     
     const handleFormChange = (e, i) => {
         let data = [...officer];
@@ -47,39 +47,34 @@ export default function Edit_Officer(){
     }
     const submit = (e) => {
         let passwd = document.getElementById("Pass");
-        console.log(passwd.value);
-        e.preventDefault();
-        //console.log(officer.length);
-        let len = officer.length;    
-        //console.log(len, orig_officer.length);    
+       
+        e.preventDefault();    
         let data;
+
+        let update_cnt = 0;
 
         officer.map((officer,i)=> {
         
-            //console.log(officer);
-
             data = {
                 NewPos: officer.Position,
                 NewName: officer.Name,
                 NewEmail: officer.Email,
                 NewPhone: officer.Phone,
-                Pass: "Hi",
+                Pass: passwd.value,
                
             };
-            //console.log(i, orig_officer.length-1);
-            if(i > orig_officer.length-1){
+            //console.log(i, orig_officer.length-1, data);
+            if(i >= orig_officer.length){
                 //console.log("adding");
                 console.log(data);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/addOfficers.php',
                     data: data,
+                    async: false,
                     success(data){
-                     
-                        window.location.reload();
-                        alert("Your information has been submitted!");
-                        console.log("Officer Added");
-                        //console.log(data);
+                        update_cnt += 1;
+                        //console.log("Officer Added");
                     },
                     error(err) {
                         alert("Something went wrong. Please try again.");
@@ -113,8 +108,7 @@ export default function Edit_Officer(){
                     url: 'https://emfas.org/njitDev/updateOfficers.php',
                     data: data,
                     success(data){
-                        //alert("Your information has been submitted!");
-                        //window.location.reload();
+                        update_cnt+=1;
                         console.log("Officer Updated");
                     },
                     error(err) {
@@ -125,12 +119,11 @@ export default function Edit_Officer(){
             }
         }
 
-        });
-
-    
-
-        //window.location.reload();
-   
+        });   
+        if(update_cnt > 0){
+            alert("Officers Updated");
+            window.location.reload();
+        }
      };
 
     const add = (e) =>{
@@ -151,17 +144,16 @@ export default function Edit_Officer(){
         let passwd = document.getElementById("Pass");
         if(window.confirm("Are you sure you want to remove this officer?")){
             let officer_data = [...officer];
-            
             //if officer already existed in the db
-            if( i <= orig_officer.length-1){
-
+            if( i <= orig_officer.length){
+                console.log(orig_officer.length);
                 //console.log(orig_officer[i].Position);
                 let post = {
                     CurPos: officer_data[i].Position,
                     CurName: officer_data[i].Name,
                     Pass: passwd.value
                 }
-            
+                console.log(officer.length);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/removeOfficers.php',
@@ -172,17 +164,15 @@ export default function Edit_Officer(){
                             alert("Something went wrong! Try again");
                         }
                         else{
-                            officer_data.splice(i, 1);
-                            setOfficer(officer_data);
-                            alert("Officer Deleted");
+                            document.getElementById(i).remove();
+                            console.log(officer.length);
                         }
                     },
                 });
             }
             //new officer field that you want to delete
             else{
-                officer_data.splice(i, 1);
-                setOfficer(officer_data);
+                document.getElementById(i).remove();
             }
            
         }
@@ -196,7 +186,7 @@ export default function Edit_Officer(){
                 <form onSubmit = {e => submit(e)} >
                     {officer.map((officer,i)=>
 
-                    <li key={i}>
+                    <li id={i} key={i}>
                         {/*<label htmlFor="ord_id">Order:</label>
                         <input type="text" id="ord_id" name="ord_id"></input> */}
                         <label htmlFor="Position">Position:</label>
@@ -232,5 +222,4 @@ export default function Edit_Officer(){
 
        
 }
-
 

@@ -36,18 +36,18 @@ const Join_form=()=>{
             success(data){
                 alert("Your information has been submitted!");
                 setResult(data);
+                window.location.reload();
             },
             error(err) {
                 alert("Something went wrong. Please try again.");
               }
-
-        });
+            });
       };
 
     return(
         <div className="form-container">
             <form 
-             action="http://localhost:8000/server.php"
+             action="https://emfas.org/njitDev/email.php"
              method='POST'
              onSubmit={(event) => handleClick(event)}
             >
