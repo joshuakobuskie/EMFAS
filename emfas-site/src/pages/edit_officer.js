@@ -13,7 +13,6 @@ export default function Edit_Officer(){
         if (!response.ok) { console.log(response);
             throw new Error('Data coud not be fetched!')
         } else {
-
             return await response.json()
         }
     }
@@ -39,19 +38,16 @@ export default function Edit_Officer(){
     
     }, [])
 
-
-    
     const handleFormChange = (e, i) => {
         let data = [...officer];
         data[i][e.target.name] = e.target.value;
     }
     const submit = (e) => {
-        let passwd = document.getElementById("Pass");
-       
         e.preventDefault();    
         let data;
-
         let update_cnt = 0;
+        let err_cnt = 0;
+        let passwd = document.getElementById("Pass");
 
         officer.map((officer,i)=> {
         
@@ -63,28 +59,32 @@ export default function Edit_Officer(){
                 Pass: passwd.value,
                
             };
-            //console.log(i, orig_officer.length-1, data);
+
+            //field is newly added
             if(i >= orig_officer.length){
-                //console.log("adding");
-                console.log(data);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/addOfficers.php',
                     data: data,
                     async: false,
                     success(data){
-                        update_cnt += 1;
-                        //console.log("Officer Added");
+                        if(data == '"Invalid Credentials"'){
+                            err_cnt+=1;
+                        }
+                        else{
+                            update_cnt+=1;
+                            //console.log("Officer Added");
+                        }
                     },
                     error(err) {
                         alert("Something went wrong. Please try again.");
                     }
         
                 });
-
-                
             }
+            //field already in database
             else{
+
                 data = {
                     NewPos: officer.Position,
                     NewName: officer.Name,
@@ -94,32 +94,34 @@ export default function Edit_Officer(){
                     CurPos: orig_officer[i].Position,
                     CurName: orig_officer[i].Name
                 }
-                //console.log(data);
-                
+                if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone ){
+
+                    $.ajax({
+                        type: "POST",
+                        url: 'https://emfas.org/njitDev/updateOfficers.php',
+                        data: data,
+                        success(data){
+                            if(data == '"Invalid Credentials"'){
+                                err_cnt+=1;
+                            }
+                            else{
+                                update_cnt+=1;
+                                //console.log("Officer Updated");
+                            }
+                        },
+                        error(err) {
+                            alert("Something went wrong. Please try again.");
+                        }
             
-            if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone ){
-         
-
-                console.log(i, data);
-                console.log(i, officer);
-
-                $.ajax({
-                    type: "POST",
-                    url: 'https://emfas.org/njitDev/updateOfficers.php',
-                    data: data,
-                    success(data){
-                        update_cnt+=1;
-                        console.log("Officer Updated");
-                    },
-                    error(err) {
-                        alert("Something went wrong. Please try again.");
-                    }
-        
-                });
+                    });
+                }
             }
-        }
 
-        });   
+        });  //end loop through officer json
+
+        if(err_cnt > 0){
+            alert("Something went wrong. Please try again!")
+        }
         if(update_cnt > 0){
             alert("Officers Updated");
             window.location.reload();
@@ -135,25 +137,21 @@ export default function Edit_Officer(){
             Phone: ''
         };
         setOfficer([...officer, object]);
-        //console.log(officer);
-
     }
 
     const remove = (e, i) =>{
         e.preventDefault();
         let passwd = document.getElementById("Pass");
+        
         if(window.confirm("Are you sure you want to remove this officer?")){
             let officer_data = [...officer];
             //if officer already existed in the db
-            if( i <= orig_officer.length){
-                console.log(orig_officer.length);
-                //console.log(orig_officer[i].Position);
+            if( i < orig_officer.length){
                 let post = {
                     CurPos: officer_data[i].Position,
                     CurName: officer_data[i].Name,
                     Pass: passwd.value
                 }
-                console.log(officer.length);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/removeOfficers.php',
@@ -165,7 +163,6 @@ export default function Edit_Officer(){
                         }
                         else{
                             document.getElementById(i).remove();
-                            console.log(officer.length);
                         }
                     },
                 });
@@ -174,7 +171,6 @@ export default function Edit_Officer(){
             else{
                 document.getElementById(i).remove();
             }
-           
         }
     
     }
