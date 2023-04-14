@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from '../emfas_logo.png';
+import logo from '../images/emfas_logo.png';
 import {FaBars, FaTimes} from "react-icons/fa";
 import { useRef } from 'react';
-import './nav.css';
+import '../styles/nav.css';
 import {Link} from "react-router-dom"
 
 

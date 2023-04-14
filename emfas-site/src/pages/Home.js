@@ -1,8 +1,8 @@
-import "./Home.css";
+import "../styles/Home.css";
 //import truck from "../truck.png";
 import truck_img from "../images/truck.png";
 import truck_event from "../images/wwd.png";
-import truck_line from "../truck_lineup.png";
+import truck_line from "../images/truck_lineup.png";
 import { useState, useEffect} from 'react';
 
 
@@ -11,7 +11,6 @@ export default function Home(){
 
     const [stats, setStats] = useState([])
   
-    
     const fetchData = async () => {
         const response = await fetch('http://emfas.org/njitDev/getStats.php')
         if (!response.ok) { console.log(response);
@@ -55,11 +54,7 @@ export default function Home(){
                     
 
                     </div>
-                {/*  <div className= "truck-img"> 
-                            <img src={truck} className="truck"/> 
-                        </div>   
-                    */}
-                
+        
                 </div>
                 <div className="block2">
 

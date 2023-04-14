@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { json } from 'react-router-dom';
-import "./weather.css";
+import "../styles/weather.css";
 
 export default function WeatherAlert() {
     const [weatherItems, initWeather] = useState([])

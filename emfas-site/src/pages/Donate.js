@@ -1,6 +1,6 @@
-import "./Donate.css";
-import paypal_img from "../paypal_code.png";
-import paypal_btn from "../paypal_btn.png";
+import "../styles/Donate.css";
+import paypal_img from "../images/paypal_code.png";
+import paypal_btn from "../images/paypal_btn.png";
 
 export default function Donate(){
     return(

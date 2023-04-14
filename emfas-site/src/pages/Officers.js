@@ -1,5 +1,5 @@
-import "./Officers.css";
-import flag_truck from "../truck_with_flag.png";
+import "../styles/Officers.css";
+import flag_truck from "../images/truck_with_flag.png";
 
 
 import React, { useState, useEffect } from 'react'

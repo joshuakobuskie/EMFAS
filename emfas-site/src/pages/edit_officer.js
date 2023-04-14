@@ -1,4 +1,4 @@
-import "./edit_officer.css";
+import "../styles/edit_officer.css";
 import { useState, useEffect } from 'react';
 import $, { post } from "jquery";
 

@@ -1,4 +1,4 @@
-import './accordion.css';
+import '../styles/accordion.css';
 import React,{useState} from 'react';
 
 export default function  Accordion(){

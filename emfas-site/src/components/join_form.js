@@ -1,4 +1,4 @@
-import Join_formCSS from './join_form.css';
+import '../styles/join_form.css';
 import { useState } from 'react';
 import $ from "jquery";
 

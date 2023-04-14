@@ -1,6 +1,6 @@
 import Accordion from "../components/accordion";
 import JoinForm  from "../components/join_form";
-import "./Join.css"
+import "../styles/Join.css"
 
 
 export default function Join(){
