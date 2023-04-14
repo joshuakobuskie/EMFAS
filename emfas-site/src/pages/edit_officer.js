@@ -9,7 +9,7 @@ export default function Edit_Officer(){
     const [orig_officer, saveOrig] = useState([]);
     
     const fetchData = async () => {
-        const response = await fetch('http://emfas.org/njitDev/getOfficers.php')
+        const response = await fetch('https://emfas.org/njitDev/getOfficers.php')
         if (!response.ok) { console.log(response);
             throw new Error('Data coud not be fetched!')
         } else {

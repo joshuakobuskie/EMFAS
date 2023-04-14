@@ -12,7 +12,7 @@ export default function Home(){
     const [stats, setStats] = useState([])
   
     const fetchData = async () => {
-        const response = await fetch('http://emfas.org/njitDev/getStats.php')
+        const response = await fetch('https://emfas.org/njitDev/getStats.php')
         if (!response.ok) { console.log(response);
             throw new Error('Data coud not be fetched!')
         } else {

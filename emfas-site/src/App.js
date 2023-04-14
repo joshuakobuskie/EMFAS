@@ -27,7 +27,7 @@ function App() {
           <Route path="/Donate" element={<Donate />} />
           <Route path="/Join" element={<Join /> } />
           <Route path="/Officers" element={<Officers />} />
-          <Route path="/njitDev/edit" element={<Edit_Officer/>} />
+          <Route path="/Edit" element={<Edit_Officer/>} />
         </Routes>
 
         <Footer className="foot"/>
