@@ -11,7 +11,7 @@ export default function Edit_Officer(){
     const fetchData = async () => {
         const response = await fetch('https://emfas.org/njitDev/getOfficers.php')
         if (!response.ok) { console.log(response);
-            throw new Error('Data coud not be fetched!')
+            throw new Error('Data could not be fetched!')
         } else {
             return await response.json()
         }
@@ -48,9 +48,10 @@ export default function Edit_Officer(){
         let update_cnt = 0;
         let err_cnt = 0;
         let passwd = document.getElementById("Pass");
+        console.log(officer);
 
         officer.map((officer,i)=> {
-        
+            console.log(i);
             data = {
                 NewPos: officer.Position,
                 NewName: officer.Name,
@@ -59,9 +60,10 @@ export default function Edit_Officer(){
                 Pass: passwd.value,
                
             };
-
+           
             //field is newly added
-            if(i >= orig_officer.length){
+            if(i > orig_officer.length-1){
+                console.log(i + ', ' + data);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/addOfficers.php',
@@ -74,6 +76,7 @@ export default function Edit_Officer(){
                         else{
                             update_cnt+=1;
                             //console.log("Officer Added");
+                            console.log("adding at position " + i);
                         }
                     },
                     error(err) {
@@ -81,6 +84,7 @@ export default function Edit_Officer(){
                     }
         
                 });
+                console.log(officer);
             }
             //field already in database
             else{
@@ -95,17 +99,18 @@ export default function Edit_Officer(){
                     CurName: orig_officer[i].Name
                 }
                 if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone ){
-
                     $.ajax({
                         type: "POST",
                         url: 'https://emfas.org/njitDev/updateOfficers.php',
                         data: data,
+                        async:false,
                         success(data){
                             if(data == '"Invalid Credentials"'){
                                 err_cnt+=1;
                             }
                             else{
                                 update_cnt+=1;
+                                console.log("updating when it should not");
                                 //console.log("Officer Updated");
                             }
                         },
@@ -124,7 +129,8 @@ export default function Edit_Officer(){
         }
         if(update_cnt > 0){
             alert("Officers Updated");
-            window.location.reload();
+            console.log(officer);
+            //window.location.reload();
         }
      };
 
@@ -181,18 +187,19 @@ export default function Edit_Officer(){
             <ul>
                 <form onSubmit = {e => submit(e)} >
                     {officer.map((officer,i)=>
-
+                    
                     <li id={i} key={i}>
+                        {i}
                         {/*<label htmlFor="ord_id">Order:</label>
                         <input type="text" id="ord_id" name="ord_id"></input> */}
                         <label htmlFor="Position">Position:</label>
-                        <input type="text" id="position" name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
+                        <input type="text" id={"position" + i} name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Name">Name: </label>
-                        <input type="text" id="Name" name="Name" defaultValue={officer.Name}   onChange={e => handleFormChange(e, i)}></input>
+                        <input type="text" id={"Name" + i} name="Name" defaultValue={officer.Name}   onChange={e => handleFormChange(e, i)}></input>
                         <label htmlFor="Email">Email:</label>
-                        <input type="text" id="Email" name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
+                        <input type="text" id={"Email" + i} name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Phone">Phone:</label>
-                        <input type="text" id="Phone" name="Phone" defaultValue={officer.Phone}   onChange={e => handleFormChange(e, i)}></input>
+                        <input type="text" id={"Phone" + i} name="Phone" defaultValue={officer.Phone}   onChange={e => handleFormChange(e, i)}></input>
                         <button className="rm-button" onClick={e => remove(e, i) }>Remove</button>
                     </li> 
                     

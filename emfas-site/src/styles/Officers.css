@@ -61,6 +61,7 @@
         flex-flow:column;
         align-items: center;
         max-width: 90%;
+        min-height: 100%;
     }
 
     .officer-table{

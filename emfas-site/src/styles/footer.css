@@ -53,5 +53,10 @@ ul{
     .foot-links a:visited{
       color:black;
     }
-
+    .foot-links a{
+        font-size: 1.5em;
+    }
+    .footer{
+        font-size: .75em;
+    }
 }
