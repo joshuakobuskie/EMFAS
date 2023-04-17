@@ -37,6 +37,10 @@
 
 }
 
+#ord_id{
+    width:5%;
+}
+
 .rm-button{
 
     border-radius: 25px;

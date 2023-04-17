@@ -51,16 +51,16 @@ export default function Edit_Officer(){
         console.log(officer);
 
         officer.map((officer,i)=> {
-            console.log(i);
+            //console.log(i);
             data = {
+                Priority: officer.Priority,
                 NewPos: officer.Position,
                 NewName: officer.Name,
                 NewEmail: officer.Email,
                 NewPhone: officer.Phone,
                 Pass: passwd.value,
-               
             };
-           
+            console.log(officer);
             //field is newly added
             if(i > orig_officer.length-1){
                 console.log(i + ', ' + data);
@@ -84,12 +84,14 @@ export default function Edit_Officer(){
                     }
         
                 });
+                window.location.reload();
                 console.log(officer);
             }
             //field already in database
             else{
 
                 data = {
+                    Priority: officer.Priority,
                     NewPos: officer.Position,
                     NewName: officer.Name,
                     NewEmail: officer.Email,
@@ -98,7 +100,9 @@ export default function Edit_Officer(){
                     CurPos: orig_officer[i].Position,
                     CurName: orig_officer[i].Name
                 }
-                if(data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email != officer.Email || orig_officer[i].Phone != officer.Phone ){
+                if(orig_officer[i].Priority !== officer.Priority || data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email !== officer.Email || orig_officer[i].Phone !== officer.Phone ){
+                    
+                    //console.log(data);                    
                     $.ajax({
                         type: "POST",
                         url: 'https://emfas.org/njitDev/updateOfficers.php',
@@ -110,7 +114,6 @@ export default function Edit_Officer(){
                             }
                             else{
                                 update_cnt+=1;
-                                console.log("updating when it should not");
                                 //console.log("Officer Updated");
                             }
                         },
@@ -130,13 +133,13 @@ export default function Edit_Officer(){
         if(update_cnt > 0){
             alert("Officers Updated");
             console.log(officer);
-            //window.location.reload();
         }
      };
 
     const add = (e) =>{
         e.preventDefault();
         let object = {
+            Order: '',
             Position: '',
             Name: '',
             Email: '',
@@ -189,9 +192,10 @@ export default function Edit_Officer(){
                     {officer.map((officer,i)=>
                     
                     <li id={i} key={i}>
-                        {i}
-                        {/*<label htmlFor="ord_id">Order:</label>
-                        <input type="text" id="ord_id" name="ord_id"></input> */}
+               
+                        
+                        <label htmlFor="Priority">Order:</label>
+                        <input type="text" id={"Priority" + i} name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
                         <label htmlFor="Position">Position:</label>
                         <input type="text" id={"position" + i} name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Name">Name: </label>
