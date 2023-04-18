@@ -3,7 +3,7 @@ import flag_truck from "../images/truck_with_flag.png";
 
 
 import React, { useState, useEffect } from 'react'
-import { json } from 'react-router-dom';
+
 
 export default function Officers(){
     const [officer, initOfficer] = useState([])

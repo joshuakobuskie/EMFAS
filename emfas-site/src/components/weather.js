@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { json } from 'react-router-dom';
 import "../styles/weather.css";
 import {FaTimes} from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 
 export default function WeatherAlert() {
@@ -51,6 +51,10 @@ export default function WeatherAlert() {
                         </div>
                         <div className="description">
                             {instruction}
+                        </div>
+
+                        <div className="more-details">
+                            <a href="https://alerts.weather.gov/cap/wwaatmget.php?x=NJZ013&y=1" target="_blank">Click here for more details</a>
                         </div>
 
                        
