@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { json } from 'react-router-dom';
 import "../styles/weather.css";
+import {FaTimes} from "react-icons/fa";
+
 
 export default function WeatherAlert() {
     const [weatherItems, initWeather] = useState([])
@@ -24,11 +26,15 @@ export default function WeatherAlert() {
         })
     }, [])
 
+    
+    const closeAlert = (e) => {
+       let alert = document.getElementsByClassName("weatherAlert");
+       alert[0].remove();
+    }
     if(weatherItems.length !== 0){ 
         //console.log(weatherItems.features.length);
         if(weatherItems.features.length !== 0){
             //console.log(weatherItems.features[0].properties.headline)
-
             headline = weatherItems.features[0].properties.headline;
             instruction = weatherItems.features[0].properties.instruction;
 
@@ -36,15 +42,21 @@ export default function WeatherAlert() {
       
                 <div className="weatherAlert">
                     <div className="w-info">
-                    
+                   
                         <div className="headline">
-                            {headline}
+                            <p>{headline}</p>
+                            <button id="close-btn" onClick={closeAlert}>   
+                                <FaTimes/>
+                            </button>
                         </div>
                         <div className="description">
                             {instruction}
                         </div>
+
+                       
                         
                     </div>
+                    
                 </div>
         
             );

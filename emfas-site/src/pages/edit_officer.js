@@ -48,10 +48,9 @@ export default function Edit_Officer(){
         let update_cnt = 0;
         let err_cnt = 0;
         let passwd = document.getElementById("Pass");
-        console.log(officer);
+       
 
         officer.map((officer,i)=> {
-            //console.log(i);
             data = {
                 Priority: officer.Priority,
                 NewPos: officer.Position,
@@ -60,10 +59,8 @@ export default function Edit_Officer(){
                 NewPhone: officer.Phone,
                 Pass: passwd.value,
             };
-            console.log(officer);
             //field is newly added
             if(i > orig_officer.length-1){
-                console.log(i + ', ' + data);
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/njitDev/addOfficers.php',
@@ -75,8 +72,7 @@ export default function Edit_Officer(){
                         }
                         else{
                             update_cnt+=1;
-                            //console.log("Officer Added");
-                            console.log("adding at position " + i);
+                            //console.log("adding at position " + i);
                         }
                     },
                     error(err) {
@@ -85,7 +81,6 @@ export default function Edit_Officer(){
         
                 });
                 window.location.reload();
-                console.log(officer);
             }
             //field already in database
             else{
@@ -101,8 +96,7 @@ export default function Edit_Officer(){
                     CurName: orig_officer[i].Name
                 }
                 if(orig_officer[i].Priority !== officer.Priority || data.CurPos !== officer.Position || data.CurName !== officer.Name || orig_officer[i].Email !== officer.Email || orig_officer[i].Phone !== officer.Phone ){
-                    
-                    //console.log(data);                    
+                                      
                     $.ajax({
                         type: "POST",
                         url: 'https://emfas.org/njitDev/updateOfficers.php',
@@ -172,6 +166,11 @@ export default function Edit_Officer(){
                         }
                         else{
                             document.getElementById(i).remove();
+                            let j = i;
+                            while (j <= officer.length){
+                                officer[i].Priority -= 1;
+                                j+=1;
+                            }
                         }
                     },
                 });
@@ -192,10 +191,9 @@ export default function Edit_Officer(){
                     {officer.map((officer,i)=>
                     
                     <li id={i} key={i}>
-               
                         
                         <label htmlFor="Priority">Order:</label>
-                        <input type="text" id={"Priority" + i} name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
+                        <input required type="text" id={"Priority-" + i} className="Priority" name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
                         <label htmlFor="Position">Position:</label>
                         <input type="text" id={"position" + i} name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Name">Name: </label>

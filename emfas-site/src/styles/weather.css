@@ -24,6 +24,35 @@
 .w-info:empty{
     background-color: aquamarine;
 }
+.headline{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline p{
+    width:100%
+}
+.headline button{
+    margin-left: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    cursor:pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:grey;
+    height: auto;
+
+
+    visibility: visible;
+    opacity: 1;
+   
+    border: none;
+    outline: none;
+}
 
 @media only screen and (max-width: 1024px){
 

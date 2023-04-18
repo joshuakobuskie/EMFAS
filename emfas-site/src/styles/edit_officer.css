@@ -10,7 +10,8 @@
 }
 
 .officers-form label{
-    margin:1em;
+    margin-left:1em;
+    margin-right:.5em;
 }
 
 .officers-form li{
@@ -37,7 +38,7 @@
 
 }
 
-#ord_id{
+.Priority {
     width:5%;
 }
 
