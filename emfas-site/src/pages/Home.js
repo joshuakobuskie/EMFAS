@@ -109,11 +109,11 @@ export default function Home(){
                         <img src={truck_line} className="w-img"></img>
                     
                     </div>
-
-
-
-
                 </div>
+                <div className="block5">
+                    <a href="http://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf"> Additionally, access the Dee Ziobro Scholarship Application here</a>
+                </div>
+
 
 
             </div>

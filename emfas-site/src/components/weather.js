@@ -57,8 +57,6 @@ export default function WeatherAlert() {
                             <a href="https://alerts.weather.gov/cap/wwaatmget.php?x=NJZ013&y=1" target="_blank">Click here for more details</a>
                         </div>
 
-                       
-                        
                     </div>
                     
                 </div>

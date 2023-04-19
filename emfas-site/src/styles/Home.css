@@ -230,6 +230,31 @@
    
 }
 
+.block5{
+    display: flex;
+    width: 65%;
+    max-width: 65%;
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 25px;
+    justify-content: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    overflow:hidden;
+    font-size: 1em;
+    color: #1B1E62;
+    font-family: Armata;
+}
+
+.block5 a{
+    font-size: 1.5em;
+    color: #1B1E62;
+    font-family: Armata;
+}
+
+.block5 a:hover{
+    color:#FF7A00;
+}
 
 @media only screen and (max-width: 1024px){
 
@@ -244,7 +269,6 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 5em;
-        overflow:scroll;
 
     }
 
@@ -273,7 +297,6 @@
         border-radius: 25px;
         justify-content: center;
         margin-bottom: 5em;
-        overflow:scroll;
 
     }
 
@@ -334,7 +357,6 @@
         border-radius: 25px;
         justify-content: center;
         margin-bottom: 5em;
-        overflow:scroll;
     
     }
 
@@ -396,9 +418,7 @@
         border-radius: 25px;
         justify-content: center;
         margin-bottom: 5em;
-        overflow:scroll;
 
-    
     }
 
 }
