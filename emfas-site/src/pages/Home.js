@@ -66,7 +66,7 @@ export default function Home(){
                             cardiac emergencies, epinephrine for severe allergic reactions, C-PAP oxygen delivery for acute respiratory emergencies, Narcan for 
                             opioid overdoses, and other lifesaving tools. We continue to recruit new volunteers, and provide lifesaving training free of charge to 
                             all applicants. If you would like to learn more about volunteering with the squad, we provide a “ride-along” program where you can join 
-                            us on a shift with no strings attached. More details about getting involved can be found on our “Join the Squad” page.
+                            us on a shift with no strings attached. More details about getting involved can be found on our “Join the Squad” page. Additionaly, information regarding the Dee Ziobro Scholarship Application can be found <a href="http://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf" target="_blank">here</a>
 
                         </p>
 
@@ -84,12 +84,13 @@ export default function Home(){
                     </div>
                     <div className="wmems">
                         <h1>What is WMEMS?</h1>
-                        <p>The Western Monmouth Emergency Medical Services is a licensed Basic Life Support agency that supports our volunteers with the New Jersey Department 
+                        <p>
+                            The Western Monmouth Emergency Medical Services is a licensed Basic Life Support agency that supports our volunteers with the New Jersey Department 
                             of Health and Senior Services. WMEMS bills patients’ insurance carriers to redeem the BLS Ambulance transportation fee reimbursement, as provided by 
                             law. WMEMS has provided the squad with an exceptional group of per-diem Emergency Medical Technicians to assist staffing our ambulances while relieving 
                             our governing bodies from an estimated cost of $250,000.00 per year. Thanks to the WMEMS, we are able to maintain our services while providing enhanced 
                             training, reduced response times, and high quality emergency medical services to our community. The WMEMS has made new ambulances, vehicle insurance, and 
-                            the annual donation and funding of the volunteer squad’s LOSAP program affordable.
+                            the annual donation and funding of the volunteer squad’s LOSAP program affordable. 
                         </p>
                     </div>
                     
@@ -110,12 +111,7 @@ export default function Home(){
                     
                     </div>
                 </div>
-                <div className="block5">
-                    <a href="http://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf"> Additionally, access the Dee Ziobro Scholarship Application here</a>
-                </div>
-
-
-
+        
             </div>
         );
 

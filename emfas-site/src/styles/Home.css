@@ -181,7 +181,20 @@
     
 }
 
-.wmemsh1, p{
+.about-ems a{
+    color:inherit;
+    text-decoration: underline;
+    font-size: inherit;
+    width:max-content;  
+    font-weight: 500;
+    display:inline;
+}
+
+.about-ems a:hover{
+    color: #FF7A00;
+}
+
+.wmems h1, p{
     max-height: 100%;
     max-width: 100%;
 }
@@ -246,15 +259,6 @@
     font-family: Armata;
 }
 
-.block5 a{
-    font-size: 1.5em;
-    color: #1B1E62;
-    font-family: Armata;
-}
-
-.block5 a:hover{
-    color:#FF7A00;
-}
 
 @media only screen and (max-width: 1024px){
 
