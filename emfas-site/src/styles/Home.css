@@ -276,7 +276,7 @@ img{
         margin-top: 1em;
         min-height:10em;
         max-height:50em;
-        max-width: 90%;
+        max-width: 85%;
         display: flex;
         flex-flow: column;
         line-height: 20em;
@@ -302,7 +302,7 @@ img{
 
         min-height:10em;
         max-height:50em;
-        min-width: 90%;
+        min-width: 85%;
         background-color: #E8E8EF;
         display: flex;
         flex-flow: column;
@@ -342,7 +342,7 @@ img{
         position: relative;
         display: inline-block;
         min-height: 100%;
-        max-width:90%;
+        max-width:85%;
         margin: 0 auto;
         line-height: normal;
         overflow: hidden;
@@ -362,7 +362,7 @@ img{
 
         min-height:10em;
         max-height:50em;
-        min-width: 90%;
+        min-width: 85%;
         background-color: #E8E8EF;
         display: flex;
         flex-flow: column;
@@ -423,7 +423,7 @@ img{
 
         min-height:10em;
         max-height:50em;
-        min-width: 90%;
+        min-width: 85%;
         background-color: #E8E8EF;
         display: flex;
         flex-flow: column;

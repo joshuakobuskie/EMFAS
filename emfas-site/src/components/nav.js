@@ -18,7 +18,7 @@ export default function Navbar() {
     
     <header className="nav" id="nav">
      
-      <img src={logo} className="nav-logo"/> 
+      <img src={require('../images/emfas_logo.png')} className="nav-logo"/> 
 
       <div className="rect1">&nbsp;</div>
       <div className="rect2">&nbsp;</div>

@@ -52,7 +52,7 @@ export default function Officers(){
                     
                     </table>
     
-                    <img src={flag_truck} className="flag-truck"></img>
+                    <img src={require("../images/truck_with_flag.png")} className="flag-truck" alt="loading"></img>
                     
                 </div>
             
@@ -85,7 +85,7 @@ export default function Officers(){
                     
                     </table>
     
-                    <img src={flag_truck} className="flag-truck"></img>
+                    <img src={require("../images/truck_with_flag.png")} className="flag-truck" alt="loading"></img>
                     
                 </div>
             

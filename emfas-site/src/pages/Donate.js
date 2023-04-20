@@ -33,8 +33,8 @@ export default function Donate(){
 
                 <div className="paypal">
                     <div className="img">
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=7HT85HQVJCXAQ"><img src={paypal_btn}></img></a>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=7HT85HQVJCXAQ"><img src={paypal_img}></img></a>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=7HT85HQVJCXAQ"><img src={require("../images/paypal_btn.png")} alt="Paypal"></img></a>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=7HT85HQVJCXAQ"><img src={require("../images/paypal_code.png")} alt="Paypal"></img></a>
                     </div>
                         
                 </div>

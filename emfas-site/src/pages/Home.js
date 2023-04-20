@@ -73,7 +73,7 @@ export default function Home(){
 
                     </div>
                     <div className="about-ems-img">
-                        <img src={truck_img} className="about-img"></img>
+                        <img src={require("../images/truck.png")} className="about-img" alt="loading"></img>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@ export default function Home(){
                     
 
                     <div className="wmems-img">
-                        <img src={truck_event} className="w-img"></img>
+                        <img src={require("../images/wwd.png")} className="w-img" alt="loading"></img>
                     </div>
                     <div className="wmems">
                         <h1>What is WMEMS?</h1>
@@ -108,7 +108,7 @@ export default function Home(){
 
                     </div>
                     <div className="about-ems-img">
-                        <img src={truck_line} className="w-img"></img>
+                        <img src={require("../images/truck_lineup.png")} className="w-img" alt="loading"></img>
                     
                     </div>
                 </div>
@@ -132,7 +132,7 @@ export default function Home(){
                                 <td>Calls Taken</td>
                                 <td>Miles Driven</td>
                             </tr>
-                            <tr>
+                            <tr className="stats">
                                 <th>--- mins</th>
                                 <th>--- calls</th>
                                 <th>--- miles</th>
@@ -159,7 +159,7 @@ export default function Home(){
 
                     </div>
                     <div className="about-ems-img">
-                        <img src={truck_img} className="about-img"></img>
+                        <img src={require("../images/truck.png")} className="about-img" alt="loading"></img>
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@ export default function Home(){
                     
 
                     <div className="wmems-img">
-                        <img src={truck_event} className="w-img"></img>
+                        <img src={require("../images/wwd.png")} className="w-img" alt="loading"></img>
                     </div>
                     <div className="wmems">
                         <h1>What is WMEMS?</h1>
@@ -194,7 +194,7 @@ export default function Home(){
 
                     </div>
                     <div className="about-ems-img">
-                        <img src={truck_line} className="w-img"></img>
+                        <img  src={require("../images/truck_lineup.png")} className="w-img"></img>
                     
                     </div>
                 </div>
