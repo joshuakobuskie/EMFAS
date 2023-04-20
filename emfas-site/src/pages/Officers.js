@@ -67,25 +67,9 @@ export default function Officers(){
                     <h1>Officers</h1>
                 </div>
                 <div className= "officers">
-                    <table className="officer-table">
-                        <tbody>
+                   ---
     
-
-                                <tr >
-                                    <th>---</th>
-                                    <td>---</td>
-                                    <td>
-                                       ---
-                                    </td>
-                                </tr>
-                            
-                        
-                        </tbody>
-                    
-                    
-                    </table>
-    
-                    <img src={require("../images/truck_with_flag.png")} className="flag-truck" alt="loading"></img>
+                   
                     
                 </div>
             

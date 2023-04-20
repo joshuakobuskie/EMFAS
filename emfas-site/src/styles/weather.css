@@ -20,6 +20,7 @@
     opacity: 75%;
     border-radius: 25px;
     filter: drop-shadow(.1em .1em .25em grey );
+    backdrop-filter: blur(0);
 }
 
 .w-info:empty{

@@ -3,6 +3,7 @@
 
 img{
     filter: drop-shadow(.1em .1em .15em grey );
+    backdrop-filter: blur(0);
 }
 
 .block1{
@@ -110,6 +111,7 @@ img{
     overflow:hidden;
     min-height:25em;
     filter: drop-shadow(.1em .1em .15em grey );
+    backdrop-filter: blur(0);
 
    
 }
@@ -175,6 +177,7 @@ img{
     overflow: hidden;
     min-height:25em;
     filter: drop-shadow(.1em .1em .15em grey );
+    backdrop-filter: blur(0);
    
 }
 
@@ -249,6 +252,7 @@ img{
     overflow:hidden;
     min-height:25em;
     filter: drop-shadow(.1em .1em .15em grey );
+    backdrop-filter: blur(0);
 
    
 }
