@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Armata&display=swap");
 
+
+img{
+    filter: drop-shadow(.1em .1em .15em grey );
+}
+
 .block1{
 
     display: flex;
@@ -13,11 +18,12 @@
     justify-content: center;
     margin-top: 2em;
     margin-bottom: 5em;
-   
 
    
 }
-
+.home h1, .home h2{
+    font-family: armata;
+}
 .title-stats{
     display: inline-block;
    
@@ -30,6 +36,7 @@
     overflow: hidden;
 
 }
+
 
 .title-stats h2{
     font-size: 2em;
@@ -102,6 +109,7 @@
     margin-bottom: 5em;
     overflow:hidden;
     min-height:25em;
+    filter: drop-shadow(.1em .1em .15em grey );
 
    
 }
@@ -166,6 +174,7 @@
     margin-bottom: 5em;
     overflow: hidden;
     min-height:25em;
+    filter: drop-shadow(.1em .1em .15em grey );
    
 }
 
@@ -239,6 +248,7 @@
     margin-bottom: 5em;
     overflow:hidden;
     min-height:25em;
+    filter: drop-shadow(.1em .1em .15em grey );
 
    
 }

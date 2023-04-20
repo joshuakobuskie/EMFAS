@@ -3,7 +3,7 @@
 
 .Donate{
     background-color: #E8E8EF;
-    height: 30em;
+
     margin-bottom:3em;
     display: flex;
     align-items: center;
@@ -23,8 +23,8 @@ h1{
 
     width: 35%;
     padding: 2em;
-    margin:3em;
-    height: 100%;
+    margin:1em;
+
     display: flex;
     justify-content: center;
    
@@ -33,6 +33,7 @@ h1{
 .or{
     width:0.5em;
     text-align: center;
+    margin:3em;
 }
 
 .contact-info .Address{
@@ -53,7 +54,7 @@ h1{
 .paypal{
     width: 35%;
     padding: 2em;
-    margin:3em;
+    margin:1em;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -66,11 +67,11 @@ h1{
     
     min-height: 100%;
     min-width:100%;
-   
+    margin: 0;
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
+
+
 
 }
 
@@ -81,12 +82,14 @@ h1{
 
 .img img{
     max-width: 50%;
-    max-height:50%;
+    max-height:100%;
 }
 
 .img a{
     display: flex;
     justify-content: center;
+    min-height:100%;
+
 }
 
 
@@ -128,10 +131,9 @@ h1{
     }
     .Donate{
         max-width: 100%;
-        min-height: 40em;
         display: flex;
         flex-flow: column;
-        background-color: white;
+        background-color: #E8E8EF;
         margin-bottom: 0;
     }
 
@@ -142,32 +144,39 @@ h1{
         font-size: 1.10em;
         padding-bottom: 0;
         padding-top: 0;
-        height: 10em;
+        margin-bottom: 0em;
+     
+    
         
     }
 
 
     .or{
-        margin-bottom: 0;
+        margin:0;
+        width: 100%;
+      
     }
     .paypal{
         width: 100%;
-        padding: 2em;
-        margin:3em;
+        padding-top: 0em;
+        margin:0em;
         max-height: 50%;
         display: flex;
         justify-content: center;
         align-items:center ;
         margin-bottom: 0em;
         margin-top: 0;
-        position: relative;  
+     
+      
     }
     .img{
-        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         max-height:100%;
     }
     .img a{
-        min-width:80%;
+        max-width:75%;
         max-height: 100%;
     }
     
@@ -177,14 +186,24 @@ h1{
         font-size: .85em;
     }
     
-
-
-
 }
 
+@media only screen and (max-width: 600px){
 
+    .img a{
+        max-width: 100%;
+    }
 
+    .img img{
+        max-width: 75%;
+    }
 
+    .or{
+        margin-top: 0em;
+  
+    }
+
+}
 
 @media only screen and (max-width: 420px){
     .contact-info{
@@ -210,5 +229,29 @@ h1{
         text-align: center;
     }
 
+
+}
+
+@media only screen and (max-width: 315px){
+    .Address{
+        font-size: .75em;
+    
+    }
+}
+
+@media only screen and (max-width: 300px){
+    .Address{
+        font-size: .70em;
+    
+    }
+
+}
+
+@media only screen and (max-width: 280px){
+
+    .Address{
+        font-size: .60em;
+    
+    }
 
 }

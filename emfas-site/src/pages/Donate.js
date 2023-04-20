@@ -22,6 +22,7 @@ export default function Donate(){
                             <p>
                                 Manalapan, NJ 07726
                             </p>
+                            
                         
                     </div>
                 </div>
@@ -34,7 +35,6 @@ export default function Donate(){
                     <div className="img">
                         <a href="https://www.paypal.com/donate/?hosted_button_id=7HT85HQVJCXAQ"><img src={paypal_btn}></img></a>
                         <a href="https://www.paypal.com/donate/?hosted_button_id=7HT85HQVJCXAQ"><img src={paypal_img}></img></a>
-                        
                     </div>
                         
                 </div>

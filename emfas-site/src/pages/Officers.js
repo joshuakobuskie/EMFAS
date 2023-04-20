@@ -29,7 +29,7 @@ export default function Officers(){
 
     return(
         <div className="officers-pg">
-            <div>
+            <div className="off-title">
                 <h1>Officers</h1>
             </div>
             <div className= "officers">

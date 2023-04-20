@@ -51,6 +51,7 @@ a:link, a:visited{
     margin-top: 2%;
     margin-left:0.5%;
     width:8%;
+    filter: drop-shadow(.1em .1em .1em grey );
      
  }
  
@@ -63,6 +64,7 @@ a:link, a:visited{
      top: 0;
      margin-top:0.5%;
      margin-bottom:0.5%;
+     
    
     
  }

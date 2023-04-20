@@ -6,8 +6,12 @@
    flex-flow:column;
    justify-content: center;
    align-items: center;
+
    
-   
+}
+
+.off-title{
+    font-family: armata;
 }
 
 .officer-table th{
@@ -17,6 +21,7 @@
     padding-left: 2em;
     font-family: Armata;
     color: #1B1E62;
+    
 }
 
 .officer-table td{
@@ -39,11 +44,16 @@
     max-width: 100%;
     min-width: 100%;
     border-radius: 25px 25px 0px 0px;
+    filter: drop-shadow(.1em .1em .25em grey );
+
+
 }
 
 .officers img{
     min-width:100%;
     border-radius: 0px 0px 25px 25px;
+    filter: drop-shadow(.1em .1em .25em grey );
+
 }
 
 .officers{
