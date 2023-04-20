@@ -9,7 +9,7 @@ export default function Edit_Officer(){
     const [orig_officer, saveOrig] = useState([]);
     
     const fetchData = async () => {
-        const response = await fetch('https://emfas.org/njitDev/getOfficers.php')
+        const response = await fetch('https://emfas.org/getOfficers.php')
         if (!response.ok) { console.log(response);
             throw new Error('Data could not be fetched!')
         } else {
@@ -63,7 +63,7 @@ export default function Edit_Officer(){
             if(i > orig_officer.length-1){
                 $.ajax({
                     type: "POST",
-                    url: 'https://emfas.org/njitDev/addOfficers.php',
+                    url: 'https://emfas.org/addOfficers.php',
                     data: data,
                     async: false,
                     success(data){
@@ -80,7 +80,7 @@ export default function Edit_Officer(){
                     }
         
                 });
-                window.location.reload();
+                //window.location.reload();
             }
             //field already in database
             else{
@@ -99,7 +99,7 @@ export default function Edit_Officer(){
                                       
                     $.ajax({
                         type: "POST",
-                        url: 'https://emfas.org/njitDev/updateOfficers.php',
+                        url: 'https://emfas.org/updateOfficers.php',
                         data: data,
                         async:false,
                         success(data){
@@ -126,7 +126,7 @@ export default function Edit_Officer(){
         }
         if(update_cnt > 0){
             alert("Officers Updated");
-            console.log(officer);
+            window.location.reload();
         }
      };
 
@@ -157,7 +157,7 @@ export default function Edit_Officer(){
                 }
                 $.ajax({
                     type: "POST",
-                    url: 'https://emfas.org/njitDev/removeOfficers.php',
+                    url: 'https://emfas.org/removeOfficers.php',
                     data: post,
                     async: false,
                     success: function(data){
@@ -193,13 +193,13 @@ export default function Edit_Officer(){
                     <li id={i} key={i}>
                         
                         <label htmlFor="Priority">Order:</label>
-                        <input required type="text" id={"Priority-" + i} className="Priority" name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
+                        <input required min="0" type="number" id={"Priority-" + i} className="Priority" name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
                         <label htmlFor="Position">Position:</label>
                         <input type="text" id={"position" + i} name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Name">Name: </label>
                         <input type="text" id={"Name" + i} name="Name" defaultValue={officer.Name}   onChange={e => handleFormChange(e, i)}></input>
                         <label htmlFor="Email">Email:</label>
-                        <input type="text" id={"Email" + i} name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
+                        <input type="email" id={"Email" + i} name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
                         <label htmlFor="Phone">Phone:</label>
                         <input type="text" id={"Phone" + i} name="Phone" defaultValue={officer.Phone}   onChange={e => handleFormChange(e, i)}></input>
                         <button className="rm-button" onClick={e => remove(e, i) }>Remove</button>

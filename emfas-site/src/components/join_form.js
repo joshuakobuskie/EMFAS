@@ -47,7 +47,7 @@ const Join_form=()=>{
     return(
         <div className="form-container">
             <form 
-             action="https://emfas.org/njitDev/email.php"
+             action="https://emfas.org/email.php"
              method='POST'
              onSubmit={(event) => handleClick(event)}
             >

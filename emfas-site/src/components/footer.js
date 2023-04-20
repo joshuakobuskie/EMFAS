@@ -6,7 +6,7 @@ export default function  Footer(){
         <div className="footer">
                 <div className="foot-links">
                     <ul>
-                        <Link to="/njitDev"> Home</Link>
+                        <Link to="/"> Home</Link>
                         <Link to="/Donate"> Donate</Link>
                         <Link to="/Join">Join Us</Link>
                         <Link to="/Officers"> Officers</Link>

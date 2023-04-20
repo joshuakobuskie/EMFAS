@@ -8,7 +8,7 @@ export default function WeatherAlert() {
     const [weatherItems, initWeather] = useState([])
     let headline; let instruction;
     const fetchData = async () => {
-    //const response = await fetch('https://api.weather.gov/alerts/active/zone/MIZ010')
+    //const response = await fetch('https://api.weather.gov/alerts/active/zone/PKZ751')
     const response = await fetch('https://api.weather.gov/alerts/active/zone/NJZ013')
     if (!response.ok) {
         throw new Error('Data coud not be fetched!')

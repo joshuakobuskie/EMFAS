@@ -10,17 +10,9 @@ export default function Navbar() {
   const navRef = useRef();
   
   const showNav = () => {
-    let show = true;
-    if(show===true){
+    
       navRef.current.classList.toggle("responsive_nav");
-      show = false;
-    }
- 
-  }
-
-  const hideNav = () => {
-    navRef.current.classList.toggle("hide_nav");
-    navRef.current.classList.remove("responsive_nav");
+      
   }
   return (
     
@@ -38,13 +30,13 @@ export default function Navbar() {
       </button>
 
       <nav className="links" ref={navRef}>  
-        <Link to="/njitDev" onClick={showNav}> Home</Link>
+        <Link to="/" onClick={showNav}> Home</Link>
         <Link to="/Donate" onClick={showNav}> Donate</Link>
         <Link to="/Join" onClick={showNav}>Join the Squad</Link>
         <Link to="/Officers" onClick={showNav}> Officers</Link>
 
 
-      <button className="nav-btn nav-close-btn" onClick={hideNav}>
+      <button className="nav-btn nav-close-btn" onClick={showNav}>
         <FaTimes/>
       </button>
       

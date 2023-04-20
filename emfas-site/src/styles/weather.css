@@ -19,6 +19,7 @@
     background-color: red;
     opacity: 75%;
     border-radius: 25px;
+    filter: drop-shadow(.1em .1em .25em grey );
 }
 
 .w-info:empty{
@@ -68,6 +69,7 @@
 
     .weatherAlert{
         text-align: initial;
+        
     }
     .w-info{
         margin-top:1em;
@@ -78,6 +80,7 @@
         opacity: 75%;
         border-radius: 25px;
         font-size: .75em;
+       
     }
 
 }
