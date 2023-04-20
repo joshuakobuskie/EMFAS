@@ -39,10 +39,10 @@ export default function Home(){
                         <h1>First Aid Squad</h1>
                         
                         <table className="stats-table">
-                            <caption><h3>Daily Stats</h3></caption>
+                            <caption><h3>Month-to-Date Stats</h3></caption>
                             <tr>
-                                <td>Avg Response Time</td>
-                                <td>Total Calls Taken</td>
+                                <td>Response Time</td>
+                                <td>Calls Taken</td>
                                 <td>Miles Driven</td>
                             </tr>
                             <tr>

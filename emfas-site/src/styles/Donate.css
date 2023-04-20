@@ -97,6 +97,7 @@ h1{
     display: flex;
     flex-flow:column;
     justify-content: center;
+  
 }
 
 
@@ -118,7 +119,7 @@ h1{
 .contact-vp{
     display: flex;
     justify-content: center;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
 }
 
 
@@ -126,8 +127,7 @@ h1{
 @media only screen and (max-width: 1024px){
     .donate-pg{
         max-width: 100%;
-        overflow: hidden;
-        max-height: fit-content;
+        min-height: 100%;
     }
     .Donate{
         max-width: 100%;
@@ -215,6 +215,10 @@ h1{
     .contact-vp{
         font-size: .75em;
     }
+
+    .contact-vp{
+        font-size: .65em;
+    }
 }
 
 
@@ -236,6 +240,9 @@ h1{
     .Address{
         font-size: .75em;
     
+    }
+    .contact-vp{
+        font-size: .5em;
     }
 }
 

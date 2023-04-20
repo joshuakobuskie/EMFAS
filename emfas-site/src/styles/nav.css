@@ -95,6 +95,7 @@ a:link, a:visited{
      margin-top:0.5%;
  }
 
+
 @media only screen and (max-width: 1024px){
     
     header .nav-btn{
@@ -160,8 +161,6 @@ a:link, a:visited{
        
     }
     
-   
- 
     nav .nav-close-btn {
 		position: absolute;
 		top: 2rem;
@@ -176,7 +175,11 @@ a:link, a:visited{
     header .responsive_nav{
         transform: translateY(200vh);
     }
-    
+    header .responsive_nav{
+        transform: translateY(200vh);
+    }
+
+   
     .rect1, .rect2, .rect3{
         visibility: none;
         opacity: 0;

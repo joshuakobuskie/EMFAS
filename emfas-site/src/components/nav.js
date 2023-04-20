@@ -10,7 +10,17 @@ export default function Navbar() {
   const navRef = useRef();
   
   const showNav = () => {
-    navRef.current.classList.toggle("responsive_nav");
+    let show = true;
+    if(show===true){
+      navRef.current.classList.toggle("responsive_nav");
+      show = false;
+    }
+ 
+  }
+
+  const hideNav = () => {
+    navRef.current.classList.toggle("hide_nav");
+    navRef.current.classList.remove("responsive_nav");
   }
   return (
     
@@ -34,7 +44,7 @@ export default function Navbar() {
         <Link to="/Officers" onClick={showNav}> Officers</Link>
 
 
-      <button className="nav-btn nav-close-btn" onClick={showNav}>
+      <button className="nav-btn nav-close-btn" onClick={hideNav}>
         <FaTimes/>
       </button>
       
