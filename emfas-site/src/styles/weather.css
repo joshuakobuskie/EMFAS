@@ -69,7 +69,7 @@
 @media only screen and (max-width: 1024px){
 
     .weatherAlert{
-        text-align: initial;
+        text-align: center;
         
     }
     .w-info{

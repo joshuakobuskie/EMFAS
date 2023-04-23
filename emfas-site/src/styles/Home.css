@@ -166,7 +166,6 @@ img{
     display: flex;
     width: 65%;
     max-width: 65%;
-    min-height: 30vh;
     line-height: 20em;
     margin: 0 auto;
     align-items: center;

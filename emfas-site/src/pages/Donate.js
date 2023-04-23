@@ -1,6 +1,4 @@
 import "../styles/Donate.css";
-import paypal_img from "../images/paypal_code.png";
-import paypal_btn from "../images/paypal_btn.png";
 
 export default function Donate(){
     return(
@@ -41,7 +39,7 @@ export default function Donate(){
             
             </div>
             <div className="contact-vp">
-                <h3>For more information, email our vice president at <a href="mailto:vicepres@emfas.org">vicepres@emfas.org</a></h3>
+                <h3>For more information, email our vice president at <a href="mailto:Vice.President@emfas.org">Vice.President@emfas.org</a></h3>
 
             </div>
             

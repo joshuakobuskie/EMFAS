@@ -4,6 +4,8 @@ import {FaBars, FaTimes} from "react-icons/fa";
 import { useRef } from 'react';
 import '../styles/nav.css';
 import {Link} from "react-router-dom"
+import $ from "jquery";
+
 
 
 export default function Navbar() {
@@ -11,14 +13,25 @@ export default function Navbar() {
   
   const showNav = () => {
     
-      navRef.current.classList.toggle("responsive_nav");
+    navRef.current.classList.toggle("responsive_nav");
       
   }
+
+  var image = document.getElementsByClassName("nav-logo");
+  console.log(image);
+  
+  image.onclick = function(e) {
+    console.log("hi")
+  //window.alert("Something");
+    window.location.href = "https://emfas.org/Home";
+  }
+
+  
   return (
     
     <header className="nav" id="nav">
      
-      <img src={require('../images/emfas_logo.png')} className="nav-logo"/> 
+      <img id="logo" src={require('../images/emfas_logo.png')} className="nav-logo"/> 
 
       <div className="rect1">&nbsp;</div>
       <div className="rect2">&nbsp;</div>
@@ -26,7 +39,7 @@ export default function Navbar() {
 
  
       <button className="nav-btn nav-bars" onClick={showNav}>
-          <FaBars/>
+          <FaBars id="burger" />
       </button>
 
       <nav className="links" ref={navRef}>  
@@ -37,7 +50,7 @@ export default function Navbar() {
 
 
       <button className="nav-btn nav-close-btn" onClick={showNav}>
-        <FaTimes/>
+        <FaTimes id="x"/>
       </button>
       
       </nav>

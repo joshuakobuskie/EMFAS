@@ -67,7 +67,9 @@ export default function Home(){
                             cardiac emergencies, epinephrine for severe allergic reactions, C-PAP oxygen delivery for acute respiratory emergencies, Narcan for 
                             opioid overdoses, and other lifesaving tools. We continue to recruit new volunteers, and provide lifesaving training free of charge to 
                             all applicants. If you would like to learn more about volunteering with the squad, we provide a “ride-along” program where you can join 
-                            us on a shift with no strings attached. More details about getting involved can be found on our “Join the Squad” page. Additionaly, information regarding the Dee Ziobro Scholarship Application can be found <a href="http://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf" target="_blank">here</a>
+                            us on a shift with no strings attached. More details about getting involved can be found on our “Join the Squad” page. 
+                            Additionaly, information regarding the Dee Ziobro Scholarship Application can be found <a href="https://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf" target="_blank">here
+                            </a>
 
                         </p>
 

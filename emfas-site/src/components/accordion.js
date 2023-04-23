@@ -68,9 +68,9 @@ const data=[{
     question:'How much time do I need to commit?',
     answer:
         'Members volunteer once a week, either during the day (our strongest need) the evening or at night. Day crews are on call from 8am to 5pm,\
-         evening crews are on call from 5p - 11p and night crews from 11pm to 5am(8am on Friday and Saturday). While on call, members usually relax\
+         evening crews are on call from 5pm to 11pm and night crews from 11pm to 5am(8am on Friday and Saturday). While on call, members usually relax\
           at our squad building or respond from home.  Many of our members respond while their children are in school or while they are at work \
-          within our district. Additionally, members must ride a weekend crew once a month.  Weekend crew consists of one day shift of either \
+          within our district. Additionally, members must ride along with a weekend crew once a month.  Weekend crew consists of one day shift of either \
           Saturday or Sunday. Cadet members are required to volunteer 20 hours a month. ',
         
 },
