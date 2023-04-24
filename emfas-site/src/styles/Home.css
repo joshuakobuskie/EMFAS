@@ -44,17 +44,6 @@ img{
     font-family: Armata;
 }
 
-.block5 a{
-    font-size: 1.5em;
-    color: #1B1E62;
-    font-family: Armata;
-    font-weight: bolder;
-}
-
-.block5 a:hover{
-    color:#FF7A00;
-}
-
 .title-stats h1{
     font-size: 3em;
     font-family: Armata;
@@ -268,11 +257,10 @@ img{
 
 .block5{
     display: flex;
-    width: 65%;
-    max-width: 65%;
+    text-align: center;
     margin: 0 auto;
     align-items: center;
-    border-radius: 25px;
+ 
     justify-content: center;
     margin-top: 5em;
     margin-bottom: 5em;
@@ -280,6 +268,22 @@ img{
     font-size: 1em;
     color: #1B1E62;
     font-family: Armata;
+    width:100%;
+}
+
+.block5 a{
+    font-size: 1.25em;
+    color: #1B1E62;
+    font-family: Armata;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    
+   
+}
+
+.block5 a:hover{
+    color:#FF7A00;
 }
 
 
@@ -450,6 +454,19 @@ img{
 
 }
 
+@media only screen and (max-width: 700px){
+    .block5 a{
+        font-size: 1em;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .block5 a{
+        font-size: .75em;
+        padding:1em;
+    }
+}
 @media only screen and (max-width: 400px){
 
     .block1 th, td{
