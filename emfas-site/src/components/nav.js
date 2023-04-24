@@ -17,16 +17,7 @@ export default function Navbar() {
       
   }
 
-  var image = document.getElementsByClassName("nav-logo");
-  console.log(image);
-  
-  image.onclick = function(e) {
-    console.log("hi")
-  //window.alert("Something");
-    window.location.href = "https://emfas.org/Home";
-  }
 
-  
   return (
     
     <header className="nav" id="nav">

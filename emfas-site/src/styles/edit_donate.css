@@ -27,13 +27,15 @@
     
 }
 
+#pass-col{
+    justify-content: center;
+}
 
 .officers-form input{
     border-radius: 25px;
     border: none;
     padding: 15px;
     font-size: medium;
-   
     max-width: 15%;
     background-color: #D9D9D9;
 

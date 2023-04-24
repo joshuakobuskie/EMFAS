@@ -1,7 +1,31 @@
 import '../styles/accordion.css';
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 
 export default function  Accordion(){
+
+    const [joinData, setData] = useState([])
+
+    const fetchData = async () => {
+        const response = await fetch('https://emfas.org/getJoin.php')
+        if (!response.ok) { console.log(response);
+            throw new Error('Data coud not be fetched!')
+        } else {
+            return await response.json()
+        }
+
+    }
+
+    useEffect(() => {
+        //prevOfficer.current = officer;
+        fetchData()
+            .then((res) => {
+                setData(res);
+            })
+            .catch((e) => {
+            })
+        
+        }, [])
+
     const[selected, setSelected]= useState(null)
 
     const toggle=(i)=>{
@@ -11,30 +35,55 @@ export default function  Accordion(){
         setSelected(i)
     }
 
+    if(joinData.length > 0){
 
-    return(
-    
-        <div className='wrapper'>
-            <div className='accordion'>
-                {data.map((item,i)=>(
-                
-                    <div className='item'>
-                        <div className='title' onClick={()=>toggle(i)}>
-                            <h2>{item.question}</h2>
-                          <h2><span className="selected"> {selected === i ? '-': '+'}</span></h2> 
+        
+        return(
+        
+            <div className='wrapper'>
+                <div className='accordion'>
+                    {joinData.map((item,i)=>(
+                    
+                        <div className='item'>
+                            <div className='title' onClick={()=>toggle(i)}>
+                                <h2>{item.Title}</h2>
+                            <h2><span className="selected"> {selected === i ? '-': '+'}</span></h2> 
+                            </div>
+                            <div className={selected === i ? 'content show': 'content'}>{item.Content}</div>
                         </div>
-                        <div className={selected === i ? 'content show': 'content'}>{item.answer}</div>
-                    </div>
-                  
-                ))}
+                    
+                    ))}
+                </div>
             </div>
-         </div>
-    
-    )
+        
+        )
+    }
+    else{
+      
+        return(
+        
+            <div className='wrapper'>
+                <div className='accordion'>
+                    {joinData.map((item,i)=>(
+                    
+                        <div className='item'>
+                            <div className='title' onClick={()=>toggle(i)}>
+                                <h2>---</h2>
+                            <h2><span className="selected"> {selected === i ? '-': '+'}</span></h2> 
+                            </div>
+                            <div className={selected === i ? 'content show': 'content'}>---</div>
+                        </div>
+                    
+                    ))}
+                </div>
+            </div>
+        
+        )
+    }
 }
 
 
-const data=[{
+/*const data=[{
 
     question:'Who can join?',
     answer:
@@ -92,4 +141,4 @@ const data=[{
         Interested in the cadet program? Are you between the ages of 16 & 18? If so please contact the cadets at cadets@emfas.org ',
         
 },
-]
+]*/

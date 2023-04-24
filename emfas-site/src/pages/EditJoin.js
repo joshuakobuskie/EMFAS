@@ -1,15 +1,15 @@
-import "../styles/edit_home.css";
+import "../styles/edit_join.css";
 import { useState, useEffect } from 'react';
 import $, { post } from "jquery";
 
 
-export default function Edit_Home(){
+export default function Edit_Join(){
 
     const [homeData, setData] = useState([])
     const [orig_Data, saveOrig] = useState([]);
     
     const fetchData = async () => {
-        const response = await fetch('https://emfas.org/getHome.php')
+        const response = await fetch('https://emfas.org/getJoin.php')
         if (!response.ok) { console.log(response);
             throw new Error('Data could not be fetched!')
         } else {
@@ -62,7 +62,7 @@ export default function Edit_Home(){
                                     
                 $.ajax({
                     type: "POST",
-                    url: 'https://emfas.org/updateHome.php',
+                    url: 'https://emfas.org/updateJoin.php',
                     data: data,
                     async:false,
                     success(data){
@@ -100,7 +100,7 @@ export default function Edit_Home(){
     return(
         <div className="home-form">
             <div className="form-title">
-                <h1>Edit Home</h1>
+                <h1>Edit Join</h1>
             </div>
             <div className="inputs">
                 <ul>

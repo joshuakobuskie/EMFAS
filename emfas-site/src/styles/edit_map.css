@@ -1,0 +1,53 @@
+.edit-links-pg{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+
+}
+
+.edit-title h1{
+    font-size: 2em;
+    font-family: Armata;
+    color: #1B1E62;
+    font-weight: bolder;
+}
+
+.edit-routes ul{
+    list-style-type: none;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%;
+    
+
+}
+
+
+
+.edit-routes li{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1em;
+    height: max-content;
+
+}
+
+.edit-routes a{
+    width:8em;
+    display: flex;
+    justify-content: center;
+    padding:.5em;
+    background-color: #FF7A00;
+    border-radius: 25px;
+    color:white;
+    font-size: 1.5em;
+}
+
+.edit-routes a:hover{
+    background-color: #E8E8EF;;
+}

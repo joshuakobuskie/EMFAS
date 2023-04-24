@@ -1,15 +1,15 @@
-import "../styles/edit_home.css";
+import "../styles/edit_donate.css";
 import { useState, useEffect } from 'react';
 import $, { post } from "jquery";
 
 
 export default function Edit_Home(){
 
-    const [homeData, setData] = useState([])
+    const [donateData, setData] = useState([])
     const [orig_Data, saveOrig] = useState([]);
     
     const fetchData = async () => {
-        const response = await fetch('https://emfas.org/getHome.php')
+        const response = await fetch('https://emfas.org/getDonate.php')
         if (!response.ok) { console.log(response);
             throw new Error('Data could not be fetched!')
         } else {
@@ -38,7 +38,7 @@ export default function Edit_Home(){
     }, [])
 
     const handleFormChange = (e, i) => {
-        let data = [...homeData];
+        let data = [...donateData];
         data[i][e.target.name] = e.target.value;
     }
     const submit = (e) => {
@@ -49,11 +49,11 @@ export default function Edit_Home(){
         let passwd = document.getElementById("Pass");
        
 
-        homeData.map((homeData,i)=> {
+        donateData.map((donateData,i)=> {
            
             data = {
-                NewTitle: homeData.Title,
-                NewContent: homeData.Name,
+                NewTitle: donateData.Title,
+                NewContent: donateData.Name,
                 OldContent: orig_Data[i].Content,
                 OldTitle: orig_Data[i].Title,
                 passwd: passwd.value
@@ -62,7 +62,7 @@ export default function Edit_Home(){
                                     
                 $.ajax({
                     type: "POST",
-                    url: 'https://emfas.org/updateHome.php',
+                    url: 'https://emfas.org/updateDonate.php',
                     data: data,
                     async:false,
                     success(data){
@@ -91,37 +91,47 @@ export default function Edit_Home(){
             window.location.reload();
         }
      };
-    
-     if(document.getElementById("block0")){
 
-        document.getElementById("block0").remove();
-        document.querySelector('label[for=content0]').remove();
-     }
+    
+    if(donateData.length > 0){
+
+    
     return(
         <div className="home-form">
             <div className="form-title">
-                <h1>Edit Home</h1>
+                <h1>Edit Donate</h1>
             </div>
             <div className="inputs">
                 <ul>
                     <form onSubmit = {e => submit(e)} >
-                        {homeData.map((homeData,i)=>
-                            <li id={i} key={i}>
-                                
-                                <label htmlFor="Title">Title:</label>
-                                <input required min="0" type="text" id={"Priority-" + i} className="Title" name="Title" defaultValue={homeData.Title}  onChange={e => handleFormChange(e, i)}></input> 
+                      
+                        <li>
                             
-                                <label htmlFor={"content" + i}>Block{i}:</label>
-                                <textarea type="text" id={"block" + i} name={"content" + i} className="block" defaultValue={homeData.Content}  onChange={e => handleFormChange(e, i)} ></textarea>
+                            <label htmlFor="Title">Title:</label>
+                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[0].Title}  onChange={e => handleFormChange(e)}></input> 
+                        
+                            <label htmlFor={"content"}>Address:</label>
+                            <textarea type="text" id={"block"} name={"content"} className="block" defaultValue={donateData[0].Content}  onChange={e => handleFormChange(e)} ></textarea>
+                        
+                        </li> 
+
+                        <li>
                             
-                            </li> 
-                        )}
+                            <label htmlFor="Title">Title:</label>
+                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Title}  onChange={e => handleFormChange(e)}></input> 
+                        
+                            <label htmlFor="Title">Email:</label>
+                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Content}  onChange={e => handleFormChange(e)}></input> 
+                        
+                        </li> 
+          
                     
-                        <li > 
+                        <li> 
                             <label htmlFor="Pass">Password</label>
                             <input required type="password" id="Pass" name="Pass" ></input>
                             <button id="submit-btn" type="submit">Submit</button>
                         </li>
+                        
                     </form>
 
                 </ul>
@@ -131,6 +141,7 @@ export default function Edit_Home(){
         
         </div>
     );
+    }
 
        
 }

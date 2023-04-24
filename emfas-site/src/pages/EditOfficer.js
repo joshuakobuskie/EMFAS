@@ -185,42 +185,48 @@ export default function Edit_Officer(){
 
     return(
         <div className="officers-form">
-         
-            <ul>
-                <form onSubmit = {e => submit(e)} >
-                    {officer.map((officer,i)=>
-                    
-                    <li id={i} key={i}>
-                        
-                        <label htmlFor="Priority">Order:</label>
-                        <input required min="0" type="number" id={"Priority-" + i} className="Priority" name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
-                        <label htmlFor="Position">Position:</label>
-                        <input type="text" id={"position" + i} name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
-                        <label htmlFor="Name">Name: </label>
-                        <input type="text" id={"Name" + i} name="Name" defaultValue={officer.Name}   onChange={e => handleFormChange(e, i)}></input>
-                        <label htmlFor="Email">Email:</label>
-                        <input type="email" id={"Email" + i} name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
-                        <label htmlFor="Phone">Phone:</label>
-                        <input type="text" id={"Phone" + i} name="Phone" defaultValue={officer.Phone}   onChange={e => handleFormChange(e, i)}></input>
-                        <button className="rm-button" onClick={e => remove(e, i) }>Remove</button>
-                    </li> 
-                    
-                    )}
-                
-                    <li>
-                       <button id="add-btn" onClick={e => add(e)}>Add</button>
-                    </li>
-                    <li> 
-                        <label htmlFor="Pass">Password</label>
-                        <input required type="password" id="Pass" name="Pass" ></input>
-                        <button id="submit-btn" type="submit">Submit</button>
-                    </li>
-                  
-                
-                    
-                </form>
+            <div className="form-title">
+                <h1>Edit Officers</h1>
+            </div>
+            <div className="form-inputs">
 
-            </ul>
+           
+                <ul>
+                    <form onSubmit = {e => submit(e)} >
+                        {officer.map((officer,i)=>
+                        
+                        <li id={i} key={i}>
+                            
+                            <label htmlFor="Priority">Order:</label>
+                            <input required min="0" type="number" id={"Priority-" + i} className="Priority" name="Priority" defaultValue={officer.Priority}  onChange={e => handleFormChange(e, i)}></input> 
+                            <label htmlFor="Position">Position:</label>
+                            <input type="text" id={"position" + i} name="Position" defaultValue={officer.Position}  onChange={e => handleFormChange(e, i)} ></input>
+                            <label htmlFor="Name">Name: </label>
+                            <input type="text" id={"Name" + i} name="Name" defaultValue={officer.Name}   onChange={e => handleFormChange(e, i)}></input>
+                            <label htmlFor="Email">Email:</label>
+                            <input type="email" id={"Email" + i} name="Email" defaultValue={officer.Email}  onChange={e => handleFormChange(e, i)} ></input>
+                            <label htmlFor="Phone">Phone:</label>
+                            <input type="text" id={"Phone" + i} name="Phone" defaultValue={officer.Phone}   onChange={e => handleFormChange(e, i)}></input>
+                            <button className="rm-button" onClick={e => remove(e, i) }>Remove</button>
+                        </li> 
+                        
+                        )}
+                    
+                        <li>
+                        <button id="add-btn" onClick={e => add(e)}>Add</button>
+                        </li>
+                        <li id="pass-col"> 
+                            <label htmlFor="Pass">Password</label>
+                            <input required type="password" id="Pass" name="Pass" ></input>
+                            <button id="submit-btn" type="submit">Submit</button>
+                        </li>
+                    
+                    
+                        
+                    </form>
+
+                </ul>
+            </div>
         
         </div>
     );

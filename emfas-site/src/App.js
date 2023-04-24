@@ -7,8 +7,12 @@ import Join from './pages/Join';
 import Officers from './pages/Officers';
 import {Route, Routes, Navigate} from "react-router-dom"
 import Footer from './components/footer';
-import EditOfficer from './pages/EditOfficer';
+import EditMap from './pages/EditMap';
 import EditHome from './pages/EditHome';
+import EditDonate from './pages/EditDonate';
+import EditJoin from './pages/EditJoin';
+import EditOfficer from './pages/EditOfficer';
+
 
 
 function App() {
@@ -22,20 +26,24 @@ function App() {
     <div className="container">
       
       <div className="body">
-    
+
         <Routes>
           <Route exact path="/" element={<Navigate exact to="/Home"/>}/>
           <Route exact path="/Donate" element={<Donate />} />
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/Join" element={<Join /> } />
           <Route exact path="/Officers" element={<Officers />} />
-          <Route exact path="/EditOfficers" element={<EditOfficer/>} />
+          <Route exact path="/Edit" element={<EditMap/>} />
           <Route exact path="/EditHome" element={<EditHome/>} />
+          <Route exact path="/EditDonate" element={<EditDonate/>} />
+          <Route exact path="/EditJoin" element={<EditJoin/>} />
+          <Route exact path="/EditOfficers" element={<EditOfficer/>} />
         </Routes>
 
-        <Footer className="foot"/>
+        <Footer className="foot" />
         
         
+      
       </div>  
     
     </div>

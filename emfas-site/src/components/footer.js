@@ -1,8 +1,11 @@
 import '../styles/footer.css';
 import {Link} from "react-router-dom";
 
+
 export default function  Footer(){
+   
     return (
+
         <div className="footer">
                 <div className="foot-links">
                     <ul>
@@ -11,7 +14,7 @@ export default function  Footer(){
                         <Link to="/Join">Join Us</Link>
                         <Link to="/Officers"> Officers</Link>
                     </ul>
-                   
+                
                 
                 </div>
 
@@ -22,11 +25,12 @@ export default function  Footer(){
                         <p>membership@emfas.org</p>
                         <p>(732) 850-6488</p>
                     </ul>
-                   
+                
                 </div>
         </div>
-       
+    
 
     );
+
 
 };
