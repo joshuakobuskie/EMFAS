@@ -1,4 +1,5 @@
 import "../styles/Donate.css";
+import Footer from '../components/footer';
 import { useState, useEffect} from 'react';
 
 export default function Donate(){
@@ -69,9 +70,9 @@ export default function Donate(){
                 
                 </div>
                 <div className="contact-vp">
-                    <h3>{donateData[1].Title} <a href={"mailto:"+ donateData[1].Content}>{donateData[1].Content}</a></h3>
+                    <h3>{donateData[1].Title} <a href={"mailto:"+ donateData[1].Content}>email</a></h3>
                 </div>
-                
+                <Footer className="foot" />
 
             </div>
         

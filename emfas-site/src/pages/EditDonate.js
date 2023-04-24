@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import $, { post } from "jquery";
 
 
-export default function Edit_Home(){
+export default function Edit_Donate(){
 
     const [donateData, setData] = useState([])
     const [orig_Data, saveOrig] = useState([]);

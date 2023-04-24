@@ -1,6 +1,5 @@
 import "../styles/Officers.css";
-import flag_truck from "../images/truck_with_flag.png";
-
+import Footer from '../components/footer';
 
 import React, { useState, useEffect } from 'react'
 
@@ -55,6 +54,7 @@ export default function Officers(){
                     <img src={require("../images/truck_with_flag.png")} className="flag-truck" alt="loading"></img>
                     
                 </div>
+                <Footer className="foot" />
             
             </div>
         )
@@ -72,6 +72,7 @@ export default function Officers(){
                    
                     
                 </div>
+                <Footer className="foot" />
             
             </div>
         )

@@ -44,6 +44,16 @@ img{
     font-family: Armata;
 }
 
+.block5 a{
+    font-size: 1.5em;
+    color: #1B1E62;
+    font-family: Armata;
+    font-weight: bolder;
+}
+
+.block5 a:hover{
+    color:#FF7A00;
+}
 
 .title-stats h1{
     font-size: 3em;

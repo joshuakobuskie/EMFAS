@@ -6,7 +6,7 @@ import Donate from './pages/Donate';
 import Join from './pages/Join';
 import Officers from './pages/Officers';
 import {Route, Routes, Navigate} from "react-router-dom"
-import Footer from './components/footer';
+//import Footer from './components/footer';
 import EditMap from './pages/EditMap';
 import EditHome from './pages/EditHome';
 import EditDonate from './pages/EditDonate';
@@ -40,10 +40,8 @@ function App() {
           <Route exact path="/EditOfficers" element={<EditOfficer/>} />
         </Routes>
 
-        <Footer className="foot" />
+       
         
-        
-      
       </div>  
     
     </div>

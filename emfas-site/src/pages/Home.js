@@ -1,5 +1,5 @@
 import "../styles/Home.css";
-
+import Footer from '../components/footer';
 
 import { useState, useEffect} from 'react';
 
@@ -143,6 +143,13 @@ export default function Home(){
                     
                     </div>
                 </div>
+
+                <div className="block5">
+                    <a href="http://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf"> Additionally, access the Dee Ziobro Scholarship Application here</a>
+                </div>
+                <div class="footer">
+                    <Footer className="foot" />
+                </div>
         
             </div>
         );
@@ -215,8 +222,8 @@ export default function Home(){
                     
                     </div>
                 </div>
-                
-        
+                <Footer className="foot" />
+
             </div>
         );
 
