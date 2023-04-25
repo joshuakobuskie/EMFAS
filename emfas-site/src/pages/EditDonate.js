@@ -60,7 +60,6 @@ export default function Edit_Donate(){
                 NewPriority: orig_Data[i].Priority
             }
             if(data.OldContent != data.NewContent|| data.NewTitle != data.OldTitle){
-                         
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/updateDonate.php',
@@ -122,7 +121,7 @@ export default function Edit_Donate(){
                             <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Title}  onChange={e => handleFormChange(e,1)}></input> 
                         
                             <label htmlFor="Title">Email:</label>
-                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Content}  onChange={e => handleFormChange(e,1)}></input> 
+                            <input required min="0" type="text" className="Title" name="Content" defaultValue={donateData[1].Content}  onChange={e => handleFormChange(e,1)}></input> 
                         
                         </li> 
           
