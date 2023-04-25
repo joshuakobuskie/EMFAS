@@ -37,6 +37,8 @@ export default function Edit_Home(){
     
     }, [])
 
+    //console.log(homeData);
+
     const handleFormChange = (e, i) => {
         let data = [...homeData];
         data[i][e.target.name] = e.target.value;
@@ -48,19 +50,21 @@ export default function Edit_Home(){
         let err_cnt = 0;
         let passwd = document.getElementById("Pass");
        
-
+      
         homeData.map((homeData,i)=> {
-           
+            
             data = {
                 NewTitle: homeData.Title,
-                NewContent: homeData.Name,
+                NewContent: homeData.Content,
                 OldContent: orig_Data[i].Content,
                 OldTitle: orig_Data[i].Title,
-                passwd: passwd.value
+                Pass: passwd.value,
+                NewPriority: orig_Data[i].Priority
             }
-            if(data.OldContent != data.NewContent|| data.NewTitle != data.OldTitle){
-                                    
-                $.ajax({
+            //console.log(homeData.Content);       
+            if(data.OldContent != data.NewContent || data.NewTitle != data.OldTitle){
+
+                $.ajax ({
                     type: "POST",
                     url: 'https://emfas.org/updateHome.php',
                     data: data,
@@ -95,7 +99,7 @@ export default function Edit_Home(){
      if(document.getElementById("block0")){
 
         document.getElementById("block0").remove();
-        document.querySelector('label[for=content0]').remove();
+        document.querySelector('label[for=Content]').remove();
      }
     return(
         <div className="home-form">
@@ -111,12 +115,12 @@ export default function Edit_Home(){
                                 <label htmlFor="Title">Title:</label>
                                 <input required min="0" type="text" id={"Priority-" + i} className="Title" name="Title" defaultValue={homeData.Title}  onChange={e => handleFormChange(e, i)}></input> 
                             
-                                <label htmlFor={"content" + i}>Block{i}:</label>
-                                <textarea type="text" id={"block" + i} name={"content" + i} className="block" defaultValue={homeData.Content}  onChange={e => handleFormChange(e, i)} ></textarea>
+                                <label htmlFor={"Content"}>Block{i}:</label>
+                                <textarea type="text" id={"block" + i} name="Content" className="block" defaultValue={homeData.Content}  onChange={e => handleFormChange(e, i)} ></textarea>
                             
                             </li> 
                         )}
-                    
+
                         <li > 
                             <label htmlFor="Pass">Password</label>
                             <input required type="password" id="Pass" name="Pass" ></input>

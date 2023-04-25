@@ -53,13 +53,14 @@ export default function Edit_Join(){
            
             data = {
                 NewTitle: homeData.Title,
-                NewContent: homeData.Name,
+                NewContent: homeData.Content,
                 OldContent: orig_Data[i].Content,
                 OldTitle: orig_Data[i].Title,
-                passwd: passwd.value
+                NewPriority: orig_Data[i].Priority,
+                Pass: passwd.value
             }
             if(data.OldContent != data.NewContent|| data.NewTitle != data.OldTitle){
-                                    
+               
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/updateJoin.php',
@@ -87,7 +88,7 @@ export default function Edit_Join(){
             alert("Something went wrong. Please try again!")
         }
         if(update_cnt > 0){
-            alert("Home Page Updated");
+            alert("Join Page Updated");
             window.location.reload();
         }
      };
@@ -112,7 +113,7 @@ export default function Edit_Join(){
                                 <input required min="0" type="text" id={"Priority-" + i} className="Title" name="Title" defaultValue={homeData.Title}  onChange={e => handleFormChange(e, i)}></input> 
                             
                                 <label htmlFor={"content" + i}>Block{i}:</label>
-                                <textarea type="text" id={"block" + i} name={"content" + i} className="block" defaultValue={homeData.Content}  onChange={e => handleFormChange(e, i)} ></textarea>
+                                <textarea type="text" id={"block" + i} name="Content" className="block" defaultValue={homeData.Content}  onChange={e => handleFormChange(e, i)} ></textarea>
                             
                             </li> 
                         )}

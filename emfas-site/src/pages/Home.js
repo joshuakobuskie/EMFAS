@@ -145,9 +145,9 @@ export default function Home(){
                 </div>
 
                 <div className="block5">
-                    <a href="http://emfas.org/2019_Dee_Ziobro_Scholarship_App.pdf"> Additionally, access the Dee Ziobro Scholarship Application here</a>
+                    <a href="http://emfas.org/Scholarship_App.pdf"> Additionally, access the Dee Ziobro Scholarship Application here</a>
                 </div>
-                <div class="footer">
+                <div className="footer">
                     <Footer className="foot" />
                 </div>
         

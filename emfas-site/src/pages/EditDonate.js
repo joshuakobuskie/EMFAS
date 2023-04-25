@@ -53,13 +53,14 @@ export default function Edit_Donate(){
            
             data = {
                 NewTitle: donateData.Title,
-                NewContent: donateData.Name,
+                NewContent: donateData.Content,
                 OldContent: orig_Data[i].Content,
                 OldTitle: orig_Data[i].Title,
-                passwd: passwd.value
+                Pass: passwd.value,
+                NewPriority: orig_Data[i].Priority
             }
             if(data.OldContent != data.NewContent|| data.NewTitle != data.OldTitle){
-                                    
+                         
                 $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/updateDonate.php',
@@ -87,7 +88,7 @@ export default function Edit_Donate(){
             alert("Something went wrong. Please try again!")
         }
         if(update_cnt > 0){
-            alert("Home Page Updated");
+            alert("Donate Page Updated");
             window.location.reload();
         }
      };
@@ -108,20 +109,20 @@ export default function Edit_Donate(){
                         <li>
                             
                             <label htmlFor="Title">Title:</label>
-                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[0].Title}  onChange={e => handleFormChange(e)}></input> 
+                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[0].Title}  onChange={e => handleFormChange(e, 0)}></input> 
                         
-                            <label htmlFor={"content"}>Address:</label>
-                            <textarea type="text" id={"block"} name={"content"} className="block" defaultValue={donateData[0].Content}  onChange={e => handleFormChange(e)} ></textarea>
+                            <label htmlFor={"Content"}>Address:</label>
+                            <textarea type="text" id={"block"} name={"Content"} className="block" defaultValue={donateData[0].Content}  onChange={e => handleFormChange(e, 0)} ></textarea>
                         
                         </li> 
 
                         <li>
                             
                             <label htmlFor="Title">Title:</label>
-                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Title}  onChange={e => handleFormChange(e)}></input> 
+                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Title}  onChange={e => handleFormChange(e,1)}></input> 
                         
                             <label htmlFor="Title">Email:</label>
-                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Content}  onChange={e => handleFormChange(e)}></input> 
+                            <input required min="0" type="text" className="Title" name="Title" defaultValue={donateData[1].Content}  onChange={e => handleFormChange(e,1)}></input> 
                         
                         </li> 
           
