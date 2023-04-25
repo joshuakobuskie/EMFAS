@@ -60,8 +60,8 @@ export default function Edit_Join(){
                 Pass: passwd.value
             }
             if(data.OldContent != data.NewContent || data.NewTitle != data.OldTitle){
-                console.log(data);
-                /*$.ajax({
+                
+                $.ajax({
                     type: "POST",
                     url: 'https://emfas.org/updateJoin.php',
                     data: data,
@@ -79,7 +79,7 @@ export default function Edit_Join(){
                         alert("Something went wrong. Please try again.");
                     }
         
-                });*/
+                });
             }
             
         });  //end loop through homedata json
